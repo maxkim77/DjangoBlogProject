@@ -5,6 +5,7 @@
 ### 1.1 목표
 - Django를 이용한 기술/개발 블로그 개발
 - 매일 개발 공부한 지식을 기록하고 유저들에게 전달하기 위한 기술 블로그 개발
+- 관리자 외 유저 역시 블로그에 글을 작성 가능하게 끔 개발
 
 ### 1.2 기능
 - CRUD, 로그인/회원가입, 댓글, 이미지 업로드, 조회수 기능 구현
@@ -60,16 +61,18 @@
 ```
 
 ### 4.2 URL 구조
-| App       | URL                | Views Function | HTML File Name |
-|-----------|--------------------|----------------|----------------|
-| accounts  | 'register/'        | register       | register.html  |
-| accounts  | 'login/'           | login          | login.html     |
-| main      | '/'                | home           | home.html      |
-| blog      | 'blog/'            | blog           | blog.html      |
-| blog      | 'blog/<int:pk>/'   | post           | post.html      |
-| blog      | 'blog/create/'     | create         | create.html    |
-| blog      | 'blog/update/<int:pk>/' | update     | update.html    |
-| blog      | 'blog/delete/<int:pk>/' | delete     | delete.html    |
+| App       | URL                | Views Function | HTML File Name | Note           |
+|-----------|--------------------|----------------|----------------|----------------|
+| accounts  | 'register/'        | register       | register.html  |                 |
+| accounts  | 'login/'           | login          | login.html     |                 |
+| accounts  | 'profile/'           | profile      | profile.html   | 비밀번호변경기능 / 프로필 수정/ 닉네임추가         |
+| main      | '/'                | home           | home.html      |                 |
+| blog      | 'blog/'            | blog           | blog.html      |                 |
+| blog      | 'blog/<int:pk>/'   | post           | post.html      |                 |
+| blog      | 'blog/write/'     | write         | write.html      |  - 카테고리가 지정될수 있어야함, 사진업로드, 게시글 조회수|
+| blog      | 'blog/edit/<int:pk>/' | edit     | edit.html          | - 게시물목록보기 상세보기 반영               |
+| blog      | 'blog/delete/<int:pk>/' | delete     | delete.html    | - 삭제후 게시글 목록화면으로 돌아감           |
+| blog      | 'blog/search/<str:tag>/' | search     | search.html    | - 주제와 카테고리에 따라 검색, 시간순에 따라 정렬|
 
 
 ### 4.3 개발일정
