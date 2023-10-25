@@ -1,4 +1,4 @@
-# 블로그 프로젝트
+# Django MiniProject1 - Django Technical Blog
 
 ## 1. 목표와 기능
 
