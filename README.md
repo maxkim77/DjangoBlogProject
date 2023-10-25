@@ -28,6 +28,11 @@
 - 배포 URL: http://your-blog.com
 
 ## 4. 프로젝트 구조와 개발일정
+
+
+![WBS](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/610b8e27-69ea-43aa-8422-5a9412727493)
+
+
 - 1주차: 프로젝트 세팅, 모델링, 관리자 페이지 설정
 - 2주차: 게시글 CRUD 기능 구현
 - 3주차: 로그인/회원가입 기능 구현
