@@ -31,7 +31,7 @@
 - 개발환경: Python 3.8, Django 3.2, PostgreSQL
 - 배포 URL: http://your-blog.com
 
-## 4. 프로젝트 구조와 개발일정
+## 4. 프로젝트 및 URL 구조와 개발일정
 
 ### 4.1 프로젝트 구조
 ```plaintext
@@ -59,7 +59,20 @@
     └── wsgi.py
 ```
 
-### 4.2 개발일정
+### 4.2 URL 구조
+| App       | URL                | Views Function | HTML File Name |
+|-----------|--------------------|----------------|----------------|
+| accounts  | 'register/'        | register       | register.html  |
+| accounts  | 'login/'           | login          | login.html     |
+| main      | '/'                | home           | home.html      |
+| blog      | 'blog/'            | blog           | blog.html      |
+| blog      | 'blog/<int:pk>/'   | post           | post.html      |
+| blog      | 'blog/create/'     | create         | create.html    |
+| blog      | 'blog/update/<int:pk>/' | update     | update.html    |
+| blog      | 'blog/delete/<int:pk>/' | delete     | delete.html    |
+
+
+### 4.3 개발일정
 ![WBS](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/610b8e27-69ea-43aa-8422-5a9412727493)
 
 
