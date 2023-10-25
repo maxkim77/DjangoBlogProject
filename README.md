@@ -8,6 +8,10 @@
 
 ### 1.2 기능
 - CRUD, 로그인/회원가입, 댓글, 이미지 업로드, 조회수 기능 구현
+- 블로그 포스팅: 마크다운 형식으로 글을 작성하고 게시할 수 있습니다.
+- 댓글 기능: 각 포스트에 댓글을 작성하고 관리할 수 있습니다.
+- 태그 및 카테고리 분류: 포스트를 태그와 카테고리로 분류하여 관리할 수 있습니다.
+
 
 ## 2. 요구사항
 ### 2.1 기본 요구사항
@@ -29,7 +33,33 @@
 
 ## 4. 프로젝트 구조와 개발일정
 
+### 4.1 프로젝트 구조
+```plaintext
+.
+├── blog
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── migrations
+│   ├── models.py
+│   ├── templates
+│   │   ├── base_generic.html
+│   │   ├── index.html
+│   │   ├── detail.html
+│   │   └── form.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── manage.py
+├── media
+├── static
+└── tech_blog
+    ├── settings.py
+    ├── urls.py
+    └── wsgi.py
 
+
+### 4.2 개발일정
 ![WBS](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/610b8e27-69ea-43aa-8422-5a9412727493)
 
 
