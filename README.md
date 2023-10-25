@@ -45,7 +45,12 @@
 - 예시: 메인 페이지, 리스트 페이지, 상세 페이지, 로그인/회원가입 페이지 등
 
 ## 6. ERD 모델링
+
+
 - User, Post, Comment, Category, Image 모델 등 정의
+
+  
+![감귤마켓 (1)](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/0478f5c5-5e5e-474f-9bcc-2224f4b31162)
 
 ## 7. 메인기능
 - 게시글 작성, 수정, 삭제, 조회
