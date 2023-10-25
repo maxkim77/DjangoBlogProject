@@ -57,7 +57,7 @@
     ├── settings.py
     ├── urls.py
     └── wsgi.py
-
+```
 
 ### 4.2 개발일정
 ![WBS](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/610b8e27-69ea-43aa-8422-5a9412727493)
