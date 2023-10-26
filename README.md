@@ -65,6 +65,7 @@
 |-----------|--------------------|----------------|----------------|----------------|
 | accounts  | 'register/'        | register       | register.html  |                 |
 | accounts  | 'login/'           | login          | login.html     |                 |
+| accounts  | 'loginout/'           | logout          | logout.html     |                 |
 | accounts  | 'profile/'           | profile      | profile.html   | 비밀번호변경기능 / 프로필 수정/ 닉네임추가         |
 | main      | '/'                | home           | home.html      |                 |
 | blog      | 'blog/'            | blog           | blog.html      |                 |
@@ -72,7 +73,7 @@
 | blog      | 'blog/write/'     | write         | write.html      |  - 카테고리 지정, 사진업로드, 게시글 조회수 반영|
 | blog      | 'blog/edit/<int:pk>/' | edit     | edit.html          | - 게시물목록보기 상세보기 반영               |
 | blog      | 'blog/delete/<int:pk>/' | delete     | delete.html    | - 삭제후 게시글 목록화면으로 돌아감           |
-| blog      | 'blog/search/<str:tag>/' | search     | search.html    | - 주제와 카테고리에 따라 검색, 시간순에 따라 정렬|
+| blog      | 'blog/search/' | search     | search.html    | - 주제와 카테고리에 따라 검색, 시간순에 따라 정렬|
 
 
 ### 4.3 개발일정
