@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+    <h1>게시글 검색</h1>
+    <form action="/blog/search/" method="get">
+        <label for="query">검색어:</label>
+        <input type="text" id="query" name="q">
+        <input type="submit" value="검색">
+    </form>
+
+    <ul>
+        {% for post in posts %}
+        <li><a href="/blog/{{ post.pk }}">{{ post.title }}</a></li>
+        {% empty %}
+        <li>검색 결과가 없습니다.</li>
+        {% endfor %}
+    </ul>
+</body>
+{% endblock %}

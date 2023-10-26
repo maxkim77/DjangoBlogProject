@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <p>정말로 이 댓글을 삭제하시겠습니까?</p>
+    <input type="submit" value="삭제">
+    <a href="{{ object.get_absolute_url }}">취소</a>
+</form>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+    <title>{{ post.title }}</title>
+    <h1>{{ post.category }}</h1>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.image }}</p>
+    <p>{{ post.content }}</p>
+    <p>조회수 : {{post.view_count}}</p>
+    <p>{{ post.tags }}</p>
+    {% if post.file_upload %}
+    <video src="{{post.file_upload.url}}" controls></video>
+    {% endif %}
+    <hr>
+{% comment %} <section>
+    <h3>태그</h3>
+    {% for tag in post.tags.all %}
+        <p>{{tag.name}}</p>
+    {% endfor %}
+</section> {% endcomment %}
+
+    <section>
+        <h3>댓글</h3>
+        {% for comment in main_comments %}
+            <p>{{ comment.message }}</p>
+            <p>{{ comment.author }}</p>
+            <p>{{ comment.updated_at }}</p>
+                <!-- 댓글 수정/삭제 링크 -->
+        {% if request.user == comment.author %}
+        <a href="{% url 'blog:comment_update' comment.pk %}">수정</a>
+        <a href="{% url 'blog:comment_delete' comment.pk %}">삭제</a>
+        {% endif %}
+            <!-- 대댓글 링크 -->
+            <a href="{% url 'blog:reply_new' post.pk comment.pk %}">답글 달기</a>
+            
+            <!-- 대댓글 표시 -->
+            {% for reply in comment.replies.all %}
+                <div style="margin-left: 20px;">
+                    <p>{{ reply.message }}</p>
+                    <p>{{ reply.author }}</p>
+                    <p>{{ reply.updated_at }}</p>
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+            <!-- 댓글 작성 폼 -->
+            <h4>댓글 작성</h4>
+            <form method="post" action="{% url 'blog:comment_new' post.pk %}">
+                {% csrf_token %}
+                {{ comment_form.as_p }}
+                <button type="submit">댓글 달기</button>
+            </form>
+            
+            
+    <a href="{% url 'blog:blog' %}">목록</a>
+    {% if user == post.author %}
+    <a href="{% url 'blog:edit' post.pk %}">수정</a>
+    <a href="{% url 'blog:delete' post.pk %}">삭제</a>
+    {% endif %}
+</body>
+{% endblock %}

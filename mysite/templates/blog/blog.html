@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+    <h1>게시글 목록</h1>
+    <ul>
+        {% for post in posts %}
+        <li>
+            <a href="{% url 'blog:post' post.pk %}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'blog:write' %}">업로드</a>
+
+</body>
+
+{% endblock %}
