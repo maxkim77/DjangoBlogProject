@@ -68,6 +68,8 @@
 | accounts  | 'loginout/'           | logout          | logout.html     |                 |
 | accounts  | 'profile/'           | profile      | profile.html   | 비밀번호변경기능 / 프로필 수정/ 닉네임추가         |
 | main      | '/'                | home           | home.html      |                 |
+| main      | '/about/'          | about           | about.html   |                 |
+| main      | '/generator/'       | generator       | generator.html   |                 |
 | blog      | 'blog/'            | blog           | blog.html      |                 |
 | blog      | 'blog/<int:pk>/'   | post           | post.html      |                 |
 | blog      | 'blog/write/'     | write         | write.html      |  - 카테고리 지정, 사진업로드, 게시글 조회수 반영|
