@@ -1,11 +1,26 @@
 {% extends "base.html" %}
+{% load widget_tweaks %}
 
 {% block content %}
+<div class="container mt-5" style = "height: 85vh;">
  <h2>Login</h2>
- <form method = "post">
+ <form method="post" class="needs-validation" novalidate>
     {% csrf_token %}
-    {{form.as_p}}
-    <button type = "submit">Login</button>
+    {% for field in form %}
+      <div class="mb-3">
+        {{ field.label_tag }}
+        {{ field|add_class:"form-control" }}
+        {% if field.help_text %}
+          <small class="form-text text-muted">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <div class="invalid-feedback">
+            {{ error }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">Login</button>
  </form>
-
+</div>
 {% endblock %}

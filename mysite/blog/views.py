@@ -105,4 +105,4 @@ class CommentDeleteView(UserPassesTestMixin, DeleteView):
     
     def get_success_url(self):
         comment = self.get_object()
-        return reverse_lazy('blog:post', kwargs={'pk': comment.post.pk})
+        return reverse_lazy('blog:post_detail', kwargs={'pk': comment.post.pk})

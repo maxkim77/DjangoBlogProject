@@ -1,21 +1,45 @@
-<!-- templates/accounts/profile.html -->
-
 {% extends "base.html" %}
 
+{% block head %}
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcqiPJI26blK8AMWQZ8J6PGqnFsf4P0iH4mqGw0lFMjwFV6vTl3QQNfJ/z9METxV" crossorigin="anonymous">
+  <style>
+    .custom-margin {
+      margin-right: 20px;
+    }
+  </style>
+  {{ block.super }}
+{% endblock %}
+
 {% block content %}
-  <h1>{{ user.username }}의 프로필 페이지입니다.</h1>
+<div class="container d-flex flex-column align-items-center justify-content-center" style="height: 90vh;">
+  <h1 class="mb-4">{{ user.username }}의 프로필 페이지입니다.</h1>
   
   <!-- 사용자 추가 정보 -->
-  <p><strong>이메일:</strong> {{ user.email }}</p>
-  {% if user.userprofile %}
-    <p><strong>주소:</strong> {{ user.userprofile.address }}</p>
-    <p><strong>전화번호:</strong> {{ user.userprofile.phone }}</p>
-  {% else %}
-    <p>주소 정보가 없습니다.</p>
-    <p>전화번호 정보가 없습니다.</p>
-  {% endif %}
+  <div class="mb-3">
+    <p><strong>이메일:</strong> {{ user.email }}</p>
+    {% if user.userprofile %}
+      <p><strong>주소:</strong> {{ user.userprofile.address }}</p>
+      <p><strong>전화번호:</strong> {{ user.userprofile.phone }}</p>
+    {% else %}
+      <div class="alert alert-warning" role="alert">
+        사용자 추가 정보가 없습니다.
+      </div>
+    {% endif %}
+  </div>
 
-  <!-- 프로필 수정 및 비밀번호 변경 링크 -->
-  <p><a href="{% url 'accounts:profile_edit' %}">프로필 수정</a></p>
-  <p><a href="{% url 'accounts:change_password' %}">비밀번호 변경</a></p>
+  <!-- 프로필 수정, 비밀번호 변경, 로그아웃 링크 -->
+  <div class="d-flex justify-content-center">
+    <a href="{% url 'accounts:profile_edit' %}" class="btn btn-primary custom-margin" style = "margin-right: 20px;">Profile Edit</a>
+    <a href="{% url 'accounts:change_password' %}" class="btn btn-secondary" style = "margin-right: 20px;">Password Edit</a>
+    <a href="{% url 'accounts:logout' %}" class="btn btn-danger">LogOut</a>
+  </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+  <!-- Add Bootstrap JS and its dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js" integrity="sha384-eMNCOe5tjI34a5vzL4Nl5aHBYojxSFW5KbRFq5mUg3oM+GpL67wMPcmeC0pOg2K2" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+wyVMc5W1fBXnFdssh8abTttF4HPXn2Yhoo" crossorigin="anonymous"></script>
 {% endblock %}

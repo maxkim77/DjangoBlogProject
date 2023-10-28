@@ -1,12 +1,27 @@
 <!-- templates/accounts/profile_edit.html -->
 
 {% extends "base.html" %}
-
+{% load widget_tweaks %}
 {% block content %}
-  <h2>프로필 수정</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">업데이트</button>
-  </form>
+  <div class="container mt-4" style = "height: 85vh;">
+    <h2>프로필 수정</h2>
+    <form method="post" class="needs-validation" novalidate>
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="mb-3">
+          {{ field.label_tag }}
+          {{ field|add_class:"form-control" }}
+          {% if field.help_text %}
+            <small class="form-text text-muted">{{ field.help_text }}</small>
+          {% endif %}
+          {% for error in field.errors %}
+            <div class="invalid-feedback">
+              {{ error }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-primary">업데이트</button>
+    </form>
+  </div>
 {% endblock %}

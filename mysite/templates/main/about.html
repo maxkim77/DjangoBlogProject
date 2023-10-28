@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}           
+            <!-- Header-->
+            <header class="py-5">
+                <div class="container px-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-xxl-6">
+                            <div class="text-center my-5">
+                                <h1 class="fw-bolder mb-3">Maximize your AI Image</h1>
+                                <p class="lead fw-normal text-muted mb-4">Our mission is to simplify the process of creating IT-technology for everyone.</p>
+                                <a class="btn btn-primary btn-lg" href="#scroll-target">Read our story</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- About section one-->
+            <section class="py-5 bg-light" id="scroll-target">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="{% static 'assets/img2.png' %}" alt="..." /></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">ⓒMax</h2>
+                            <p class="lead fw-normal text-muted mb-0">With a commitment to crafting cutting-edge digital solutions, we not only design and develop top-tier websites but also empower our clients and community with the tech knowledge they need to thrive in the digital age. At Max, we believe in transforming ideas into reality, ensuring every digital journey is seamless, and sharing the wisdom of technology for a brighter, connected future.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team members section-->
+            <section class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="text-center">
+                        <h2 class="fw-bolder">Profile</h2>
+                        <p class="lead fw-normal text-muted mb-5">Dedicated to quality and your success</p>
+                    </div>
+                    <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+                        <div class="col mb-5">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" src="{% static 'assets/img.jpg' %}" alt="..." />
+                                <h5 class="fw-bolder">Max Kim</h5>
+                                <div class="fst-italic text-muted">Back-End Developer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-5">
+                <div class="container px-5">
+                    <!-- Contact cards-->
+                    <div class="row gx-5 row-cols-2 row-cols-lg-4 py-5">
+                        <div class="col">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-chat-dots"></i></div>
+                            <div class="h5 mb-2">Chat with us</div>
+                            <p class="text-muted mb-0">Chat live with one of our support specialists.</p>
+                        </div>
+                        <div class="col">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-people"></i></div>
+                            <div class="h5">Ask the community</div>
+                            <p class="text-muted mb-0">Explore our community forums and communicate with other users.</p>
+                        </div>
+                        <div class="col">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-question-circle"></i></div>
+                            <div class="h5">Support center</div>
+                            <p class="text-muted mb-0">Browse FAQ's and support articles to find solutions.</p>
+                        </div>
+                        <div class="col">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-telephone"></i></div>
+                            <div class="h5">Call us</div>
+                            <p class="text-muted mb-0">Call us during normal business hours at (555) 892-9403.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        {% endblock %}
