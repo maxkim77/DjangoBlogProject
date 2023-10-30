@@ -98,11 +98,13 @@
                                                 
                                                 
                             </section>
-                            <a href="{% url 'blog:blog' %}">목록</a>
+                            <br>
+                            <a href="{% url 'blog:blog' %}" class="btn btn-primary">목록</a>
                             {% if user == post.author %}
-                            <a href="{% url 'blog:edit' post.pk %}">수정</a>
-                            <a href="{% url 'blog:delete' post.pk %}">삭제</a>
+                                <a href="{% url 'blog:edit' post.pk %}" class="btn btn-secondary">수정</a>
+                                <a href="{% url 'blog:delete' post.pk %}" class="btn btn-danger">삭제</a>
                             {% endif %}
+                            
                         </div>
                     </div>
                 </div>

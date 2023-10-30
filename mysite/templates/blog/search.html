@@ -16,7 +16,7 @@
         <ul class="list-group">
             {% for post in posts %}
             <li class="list-group-item">
-                <a href="/blog/{{ post.pk }}">{{ post.title }}</a>
+                <a href ="/blog/{{ post.pk }}" style="text-decoration: none;">{{ post.title }}</a>
             </li>
             {% empty %}
             <li class="list-group-item">검색 결과가 없습니다.</li>

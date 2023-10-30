@@ -13,7 +13,7 @@
             {% for post in notices %}
             <div class="col-lg-6">
                 <div class="position-relative mb-5">
-                    <a href="{% url 'blog:post' post.pk %}" class="stretched-link">
+                    <a href ="{% url 'blog:post' post.pk %}" class="stretched-link" style="text-decoration: none;">
                         {% if post.thumb_image %}
                         <img class="img-fluid rounded-3 mb-3" src="{{ post.thumb_image.url }}" alt="{{ post.title }}">
                         {% endif %}
@@ -69,7 +69,7 @@
             {% for post in regular_posts %}
             <div class="col-lg-6">
                 <div class="position-relative mb-5">
-                    <a href="{% url 'blog:post' post.pk %}" class="stretched-link">
+                    <a href ="{% url 'blog:post' post.pk %}" class="stretched-link" style="text-decoration: none;">
                         {% if post.thumb_image %}
                         <img class="img-fluid rounded-3 mb-3" src="{{ post.thumb_image.url }}" alt="{{ post.title }}">
                         {% endif %}
@@ -88,7 +88,7 @@
             <!-- 이전 페이지 링크 -->
             {% if regular_posts.has_previous %}
                 <li class="page-item">
-                    <a class="page-link" href="?regular_page={{ regular_posts.previous_page_number }}">Previous</a>
+                    <a href="?regular_page={{ regular_posts.previous_page_number }}" class="page-link">Previous</a>
                 </li>
             {% else %}
                 <li class="page-item disabled"><span class="page-link">Previous</span></li>
