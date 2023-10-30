@@ -2,6 +2,7 @@ from django.urls import reverse
 from django.db import models
 from django.conf import settings
 import django.utils.timezone
+from django.contrib import admin
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
@@ -9,13 +10,13 @@ class Post(models.Model):
     image = models.ImageField(upload_to='images/', blank=True, null=True)
     category = models.CharField(max_length=100, null=True)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
-    thumb_image = models.ImageField(upload_to = 'blog/images/%Y/%m/%d/', blank=True)
-    file_upload = models.FileField(upload_to='blog/files/%Y/%m/%d/', blank=True)
+    thumb_image = models.ImageField(upload_to = 'blog/images/%Y/%m/%d/', blank=True, null=True)
+    file_upload = models.FileField(upload_to='blog/files/%Y/%m/%d/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
     view_count = models.PositiveIntegerField(default=0)
     tags = models.ManyToManyField('Tag', blank = True)
-
+    is_notice = models.BooleanField(default=False, verbose_name="공지사항 여부") #추가
 
     def __str__(self):
         return self.title
@@ -45,3 +46,7 @@ class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
     def __str__(self):
         return self.name
+    
+class PostAdmin(admin.ModelAdmin):
+    list_display = ['title', 'author', 'is_notice']
+    # 기타 설정들...

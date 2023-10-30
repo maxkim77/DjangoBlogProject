@@ -1,15 +1,121 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<body>
-    <h1>게시글 목록</h1>
-    <ul>
-        {% for post in posts %}
-        <li>
-            <a href="{% url 'blog:post' post.pk %}">{{ post.title }}</a></li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'blog:write' %}">업로드</a>
 
-</body>
+<section class="py-5 bg-light">
+    <div class="container px-5 my-5">
+        <div class="text-center mb-5">
+            <h1 class="fw-bolder">Notice</h1>
+            <p class="lead fw-normal text-muted mb-0">Blog Form</p>
+        </div>
+
+        <div class="row gx-5">
+            {% for post in notices %}
+            <div class="col-lg-6">
+                <div class="position-relative mb-5">
+                    <a href="{% url 'blog:post' post.pk %}" class="stretched-link">
+                        {% if post.thumb_image %}
+                        <img class="img-fluid rounded-3 mb-3" src="{{ post.thumb_image.url }}" alt="{{ post.title }}">
+                        {% endif %}
+                        <div class="h3 fw-bolder text-decoration-none link-dark">{{ post.title }}</div>
+                    </a>
+                </div>
+            </div>
+            {% empty %}
+                <p>No notices available.</p>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- 페이지네이션 구현 -->
+    <!-- 공지사항 페이지네이션 -->
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            <!-- 이전 페이지 링크 -->
+            {% if notices.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?notice_page={{ notices.previous_page_number }}">Previous</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled"><span class="page-link">Previous</span></li>
+            {% endif %}
+
+            <!-- 페이지 번호 링크 -->
+            {% for num in notices.paginator.page_range %}
+                <li class="page-item {% if num == notices.number %}active{% endif %}">
+                    <a class="page-link" href="?notice_page={{ num }}">{{ num }}</a>
+                </li>
+            {% endfor %}
+
+            <!-- 다음 페이지 링크 -->
+            {% if notices.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?notice_page={{ notices.next_page_number }}">Next</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled"><span class="page-link">Next</span></li>
+            {% endif %}
+        </ul>
+    </nav>
+</section>
+
+<section class="py-5">
+    <div class="container px-5 my-5">
+        <div class="text-center mb-5">
+            <h1 class="fw-bolder">AI Image-Blog</h1>
+            <p class="lead fw-normal text-muted mb-0">Community Form</p>
+        </div>
+
+        <div class="row gx-5">
+            {% for post in regular_posts %}
+            <div class="col-lg-6">
+                <div class="position-relative mb-5">
+                    <a href="{% url 'blog:post' post.pk %}" class="stretched-link">
+                        {% if post.thumb_image %}
+                        <img class="img-fluid rounded-3 mb-3" src="{{ post.thumb_image.url }}" alt="{{ post.title }}">
+                        {% endif %}
+                        <div class="h3 fw-bolder text-decoration-none link-dark">{{ post.title }}</div>
+                    </a>
+                </div>
+            </div>
+            {% empty %}
+                <p>No regular posts available.</p>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- 일반 게시글 페이지네이션 -->
+    <nav aria-label="Page navigation for regular posts">
+        <ul class="pagination justify-content-center">
+            <!-- 이전 페이지 링크 -->
+            {% if regular_posts.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?regular_page={{ regular_posts.previous_page_number }}">Previous</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled"><span class="page-link">Previous</span></li>
+            {% endif %}
+
+            <!-- 페이지 번호 링크 -->
+            {% for num in regular_posts.paginator.page_range %}
+                <li class="page-item {% if num == regular_posts.number %}active{% endif %}">
+                    <a class="page-link" href="?regular_page={{ num }}">{{ num }}</a>
+                </li>
+            {% endfor %}
+
+            <!-- 다음 페이지 링크 -->
+            {% if regular_posts.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?regular_page={{ regular_posts.next_page_number }}">Next</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled"><span class="page-link">Next</span></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% if user.is_authenticated %}
+    <div class="text-center">
+        <a href="{% url 'blog:write' %}" class="btn btn-primary">Upload</a>
+    </div>
+    {% endif %}
+</section>
 
 {% endblock %}
