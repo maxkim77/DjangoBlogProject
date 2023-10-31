@@ -95,6 +95,8 @@
 ## 6. ERD 모델링
 테이블 구조 : 
 - users, Post, Comment, Tag, PostLikes, PostTags, UserProfile
+
+  
 관계 정의 : 
 - Post의 author_id 필드는 users 테이블의 id 필드와 연결,
 - PostLikes와 PostTags 테이블은 Post와 User, Post와 Tag 사이의 다대다 관계
