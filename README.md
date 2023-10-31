@@ -93,12 +93,14 @@
 - 예시: 메인 페이지, 리스트 페이지, 상세 페이지, 로그인/회원가입 페이지 등
 
 ## 6. ERD 모델링
+테이블 구조 : 
+- users, Post, Comment, Tag, PostLikes, PostTags, UserProfile
+관계 정의 : 
+- Post의 author_id 필드는 users 테이블의 id 필드와 연결,
+- PostLikes와 PostTags 테이블은 Post와 User, Post와 Tag 사이의 다대다 관계
 
+![Untitled](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/3e555ca8-9c6c-4f5c-912e-3b8fe7e15aaf)
 
-- User, Post, Comment, Category, Image 모델 등 정의
-
-  
-![감귤마켓 (1)](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/0478f5c5-5e5e-474f-9bcc-2224f4b31162)
 
 ## 7. 메인기능
 - 게시글 작성, 수정, 삭제, 조회
