@@ -34,7 +34,7 @@
 
 
 ## 3. 개발환경 및 배포 URL
-- 개발환경: Python 3.8, Django 3.2, PostgreSQL
+- 개발환경: HTML, CSS, JS, Bootstrap 5.3, Python 3.8, Django 3.2, PostgreSQL
 - 배포 URL: http://your-blog.com
 
 ## 4. 프로젝트 및 URL 구조와 개발일정
