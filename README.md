@@ -95,7 +95,7 @@
 | accounts  | 'register/'                                | register          | accounts/register.html                |                |
 | accounts  | 'login/'                                   | login             | accounts/login.html                   |                |
 | accounts  | 'logout/'                                  | logout            | accounts/logout.html                  |                |
-| accounts  | 'profile/'                                 | profile           | accounts/profile.html                 | 비밀번호변경기능 / 프로필 수정/ 닉네임추가 |
+| accounts  | 'profile/'                                 | profile           | accounts/profile.html                 | 비밀번호변경기능 / <br>프로필 수정/ 닉네임추가 |
 
 
 - boardapp
