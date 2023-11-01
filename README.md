@@ -66,15 +66,26 @@
 ```
 
 ### 4.2 URL 구조
+- accounts
 | App       | URL                                        | Views Function    | HTML File Name                        | Note           |
 |-----------|--------------------------------------------|-------------------|---------------------------------------|----------------|
 | accounts  | 'register/'                                | register          | accounts/register.html                |                |
 | accounts  | 'login/'                                   | login             | accounts/login.html                   |                |
 | accounts  | 'logout/'                                  | logout            | accounts/logout.html                  |                |
 | accounts  | 'profile/'                                 | profile           | accounts/profile.html                 | 비밀번호변경기능 / 프로필 수정/ 닉네임추가 |
+
+
+- main
+| App       | URL                                        | Views Function    | HTML File Name                        | Note           |
+|-----------|--------------------------------------------|-------------------|---------------------------------------|----------------|
 | main      | '/'                                        | home              | main/home.html                        |                |
 | main      | '/about/'                                  | about             | main/about.html                       |                |
 | main      | '/generator/'                               | generator         | main/generator.html                   |                |
+
+
+- blog
+| App       | URL                                        | Views Function    | HTML File Name                        | Note           |
+|-----------|--------------------------------------------|-------------------|---------------------------------------|----------------|
 | blog      | 'blog/'                                    | blog              | blog/blog.html                        |                |
 | blog      | 'blog/<int:pk>/'                           | post              | blog/post.html                        |                |
 | blog      | 'blog/write/'                              | write             | blog/write.html                       | - 카테고리 지정, 사진업로드, 게시글 조회수 반영|
@@ -86,6 +97,11 @@
 | blog      | 'post/<int:pk>/like/'                      | like_post         | blog/post.html                        |                |
 | blog      | 'comment/<int:pk>/update/'                 | comment_update    | blog/comment_form.html                |                |
 | blog      | 'comment/<int:pk>/delete/'                 | comment_delete    | blog/comment_confirm_delete.html      |                |
+
+
+- boardapp
+| App       | URL                                        | Views Function    | HTML File Name                        | Note           |
+|-----------|--------------------------------------------|-------------------|---------------------------------------|----------------|
 | boardapp  | 'board/'                                   | board             | boardapp/post_list.html               | 게시판 목록 |
 | boardapp  | 'board/<int:pk>/'                          | post_detail       | boardapp/post_detail.html            | 게시글 상세보기 |
 | boardapp  | 'board/write/'                             | post_write        | boardapp/post_write.html             | 게시글 작성 |
