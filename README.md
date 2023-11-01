@@ -128,7 +128,7 @@
 | blog      | 'post/<int:post_pk>/comment/<br><int:parent_pk>/' | reply_new    | blog/comment_form.html                |                |
 | blog      | 'post/<int:pk>/like/'                      | like_post         | blog/post.html                        |                |
 | blog      | 'comment/<int:pk>/update/'                 | comment_update    | blog/comment_form.html                |                |
-| blog      | 'comment/<int:pk>/delete/'                 | comment_delete    | blog/comment_confirm_delete.html      |                |
+| blog      | 'comment/<int:pk>/delete/'                 | comment_delete    | blog/comment_<br>confirm_delete.html      |                |
 
 
 
