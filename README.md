@@ -41,28 +41,48 @@
 
 ### 4.1 프로젝트 구조
 ```plaintext
-.
-├── blog
-│   ├── admin.py
-│   ├── apps.py
-│   ├── forms.py
-│   ├── migrations
-│   ├── models.py
-│   ├── templates
-│   │   ├── base_generic.html
-│   │   ├── index.html
-│   │   ├── detail.html
-│   │   └── form.html
-│   ├── tests.py
-│   ├── urls.py
-│   └── views.py
-├── manage.py
-├── media
-├── static
-└── tech_blog
-    ├── settings.py
-    ├── urls.py
-    └── wsgi.py
+📦mysite
+ ┣ 📂accounts
+ ┃ ┣ 📜models.py
+ ┃ ┣ 📜urls.py
+ ┃ ┣ 📜views.py
+ ┣ 📂blog
+ ┃ ┣ 📜models.py
+ ┃ ┣ 📜urls.py
+ ┃ ┣ 📜views.py
+ ┣ 📂boardapp
+ ┃ ┣ 📜models.py
+ ┃ ┣ 📜urls.py
+ ┃ ┣ 📜views.py
+ ┣ 📂main
+ ┃ ┣ 📜urls.py
+ ┃ ┣ 📜views.py
+ ┣ 📂templates
+ ┃ ┣ 📂accounts
+ ┃ ┃ ┣ 📜login.html
+ ┃ ┃ ┣ 📜profile.html
+ ┃ ┃ ┗ 📜register.html
+ ┃ ┣ 📂blog
+ ┃ ┃ ┣ 📜post.html
+ ┃ ┃ ┣ 📜write.html
+ ┃ ┣ 📂boardapp
+ ┃ ┃ ┣ 📜post_detail.html
+ ┃ ┃ ┣ 📜post_list.html
+ ┃ ┣ 📂main
+ ┃ ┃ ┣ 📜home.html
+ ┣ 📂static
+ ┃ ┣ 📂css
+ ┃ ┃ ┗ 📜styles.css
+ ┃ ┣ 📂js
+ ┃ ┃ ┗ 📜scripts.js
+ ┣ 📂media
+ ┃ ┣ 📂blog
+ ┃ ┃ ┣ 📂images
+ ┣ 📂tutorialdjango
+ ┃ ┣ 📜settings.py
+ ┃ ┣ 📜urls.py
+ ┗ 📜manage.py
+
 ```
 
 ### 4.2 URL 구조
