@@ -148,7 +148,9 @@
 ## 5. UI/BM
 
 
-![슬라이드1](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/ca8f22f8-eb67-4bf0-87d6-ed4756507cb0)
+![슬라이드1](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/a738e808-5df8-4ea4-8465-9344b5df46eb)
+
+
 구성 : 메인 페이지, 설명 페이지, 이미지생성 페이지, 게시판형 블로그 페이지, 갤러리형형 블로그 페이지,로그인/회원가입 페이지 등
 
 
