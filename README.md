@@ -138,26 +138,28 @@
 ![WBS](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/610b8e27-69ea-43aa-8422-5a9412727493)
 
 
-- 1주차: 프로젝트 세팅, 모델링, 관리자 페이지 설정
-- 2주차: 게시글 CRUD 기능 구현
-- 3주차: 로그인/회원가입 기능 구현
-- 4주차: 댓글 기능, 이미지 업로드 구현
-- 5주차: 추가 기능 구현, 테스팅
-- 6주차: 배포 및 최종 테스팅
+- 0단계: 프로젝트 세팅, 모델링, 관리자 페이지 설정
+- 1단계: 게시글 CRUD 기능 구현
+- 2단계: 로그인/회원가입 기능 구현
+- 3단계: 댓글 기능, 이미지 업로드 구현
+- 4단계: 추가 기능 구현, 테스팅
+- 5단계: 배포 및 최종 테스팅
 
 ## 5. UI/BM
 - 예시: 메인 페이지, 리스트 페이지, 상세 페이지, 로그인/회원가입 페이지 등
 
 ## 6. ERD 모델링
+
+
+![감귤마켓](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/687c5170-1b9a-4f76-bbca-64391dac488d)
+
 테이블 구조 : 
-- users, Post, Comment, Tag, PostLikes, PostTags, UserProfile
+- users, Post, Comment, Tag, PostLikes, PostTags, UserProfile, Board, BoardComment, Boardlikes 
 
   
 관계 정의 : 
 - Post의 author_id 필드는 users 테이블의 id 필드와 연결,
 - PostLikes와 PostTags 테이블은 Post와 User, Post와 Tag 사이의 다대다 관계
-
-![Untitled](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/3e555ca8-9c6c-4f5c-912e-3b8fe7e15aaf)
 
 
 ## 7. 메인기능
