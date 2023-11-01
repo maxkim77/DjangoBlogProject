@@ -66,21 +66,35 @@
 ```
 
 ### 4.2 URL 구조
-| App       | URL                | Views Function | HTML File Name | Note           |
-|-----------|--------------------|----------------|----------------|----------------|
-| accounts  | 'register/'        | register       | register.html  |                 |
-| accounts  | 'login/'           | login          | login.html     |                 |
-| accounts  | 'loginout/'           | logout          | logout.html     |                 |
-| accounts  | 'profile/'           | profile      | profile.html   | 비밀번호변경기능 / 프로필 수정/ 닉네임추가         |
-| main      | '/'                | home           | home.html      |                 |
-| main      | '/about/'          | about           | about.html   |                 |
-| main      | '/generator/'       | generator       | generator.html   |                 |
-| blog      | 'blog/'            | blog           | blog.html      |                 |
-| blog      | 'blog/<int:pk>/'   | post           | post.html      |                 |
-| blog      | 'blog/write/'     | write         | write.html      |  - 카테고리 지정, 사진업로드, 게시글 조회수 반영|
-| blog      | 'blog/edit/<int:pk>/' | edit     | edit.html          | - 게시물목록보기 상세보기 반영               |
-| blog      | 'blog/delete/<int:pk>/' | delete     | delete.html    | - 삭제후 게시글 목록화면으로 돌아감           |
-| blog      | 'blog/search/' | search     | search.html    | - 주제와 카테고리에 따라 검색, 시간순에 따라 정렬|
+| App       | URL                                        | Views Function    | HTML File Name                        | Note           |
+|-----------|--------------------------------------------|-------------------|---------------------------------------|----------------|
+| accounts  | 'register/'                                | register          | accounts/register.html                |                |
+| accounts  | 'login/'                                   | login             | accounts/login.html                   |                |
+| accounts  | 'logout/'                                  | logout            | accounts/logout.html                  |                |
+| accounts  | 'profile/'                                 | profile           | accounts/profile.html                 | 비밀번호변경기능 / 프로필 수정/ 닉네임추가 |
+| main      | '/'                                        | home              | main/home.html                        |                |
+| main      | '/about/'                                  | about             | main/about.html                       |                |
+| main      | '/generator/'                               | generator         | main/generator.html                   |                |
+| blog      | 'blog/'                                    | blog              | blog/blog.html                        |                |
+| blog      | 'blog/<int:pk>/'                           | post              | blog/post.html                        |                |
+| blog      | 'blog/write/'                              | write             | blog/write.html                       | - 카테고리 지정, 사진업로드, 게시글 조회수 반영|
+| blog      | 'blog/edit/<int:pk>/'                      | edit              | blog/edit.html                        | - 게시물목록보기 상세보기 반영 |
+| blog      | 'blog/delete/<int:pk>/'                    | delete            | blog/delete.html                      | - 삭제후 게시글 목록화면으로 돌아감 |
+| blog      | 'blog/search/'                             | search            | blog/search.html                      | - 주제와 카테고리에 따라 검색, 시간순에 따라 정렬|
+| blog      | 'post/<int:post_pk>/comment/'              | comment_new       | blog/comment_form.html                |                |
+| blog      | 'post/<int:post_pk>/comment/<int:parent_pk>/' | reply_new    | blog/comment_form.html                |                |
+| blog      | 'post/<int:pk>/like/'                      | like_post         | blog/post.html                        |                |
+| blog      | 'comment/<int:pk>/update/'                 | comment_update    | blog/comment_form.html                |                |
+| blog      | 'comment/<int:pk>/delete/'                 | comment_delete    | blog/comment_confirm_delete.html      |                |
+| boardapp  | 'board/'                                   | board             | boardapp/post_list.html               | 게시판 목록 |
+| boardapp  | 'board/<int:pk>/'                          | post_detail       | boardapp/post_detail.html            | 게시글 상세보기 |
+| boardapp  | 'board/write/'                             | post_write        | boardapp/post_write.html             | 게시글 작성 |
+| boardapp  | 'board/edit/<int:pk>/'                     | post_edit         | boardapp/post_edit.html              | 게시글 수정 |
+| boardapp  | 'board/delete/<int:pk>/'                   | post_delete       | boardapp/post_delete.html            | 게시글 삭제 |
+| boardapp  | 'board/<int:pk>/comment/'                  | comment_create    | boardapp/comment_form.html           | 댓글 작성 |
+| boardapp  | 'board/<int:pk>/comment/<int:comment_pk>/edit/' | comment_edit | boardapp/comment_form.html           | 댓글 수정 |
+| boardapp  | 'board/<int:pk>/comment/<int:comment_pk>/delete/' | comment_delete | boardapp/comment_confirm_delete.html| 댓글 삭제 |
+
 
 
 ### 4.3 개발일정
