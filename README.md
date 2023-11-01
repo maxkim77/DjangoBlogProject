@@ -82,7 +82,7 @@
 | blog      | 'blog/delete/<int:pk>/'                    | delete            | blog/delete.html                      | - 삭제후 게시글 목록화면으로 돌아감 |
 | blog      | 'blog/search/'                             | search            | blog/search.html                      | - 주제와 카테고리에 따라 검색, 시간순에 따라 정렬|
 | blog      | 'post/<int:post_pk>/comment/'              | comment_new       | blog/comment_form.html                |                |
-| blog      | 'post/<int:post_pk>/comment/<int:parent_pk>/' | reply_new    | blog/comment_form.html                |                |
+| blog      | 'post/<int:post_pk>/comment/<br><int:parent_pk>/' | reply_new    | blog/comment_form.html                |                |
 | blog      | 'post/<int:pk>/like/'                      | like_post         | blog/post.html                        |                |
 | blog      | 'comment/<int:pk>/update/'                 | comment_update    | blog/comment_form.html                |                |
 | blog      | 'comment/<int:pk>/delete/'                 | comment_delete    | blog/comment_confirm_delete.html      |                |
@@ -92,8 +92,8 @@
 | boardapp  | 'board/edit/<int:pk>/'                     | post_edit         | boardapp/post_edit.html              | 게시글 수정 |
 | boardapp  | 'board/delete/<int:pk>/'                   | post_delete       | boardapp/post_delete.html            | 게시글 삭제 |
 | boardapp  | 'board/<int:pk>/comment/'                  | comment_create    | boardapp/comment_form.html           | 댓글 작성 |
-| boardapp  | 'board/<int:pk>/comment/<int:comment_pk>/edit/' | comment_edit | boardapp/comment_form.html           | 댓글 수정 |
-| boardapp  | 'board/<int:pk>/comment/<int:comment_pk>/delete/' | comment_delete | boardapp/comment_confirm_delete.html| 댓글 삭제 |
+| boardapp  | 'board/<int:pk>/comment/<br><int:comment_pk>/edit/' | comment_edit | boardapp/comment_form.html           | 댓글 수정 |
+| boardapp  | 'board/<int:pk>/comment/<br><int:comment_pk>/delete/' | comment_delete | boardapp/comment_confirm_delete.html| 댓글 삭제 |
 
 
 
