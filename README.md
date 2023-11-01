@@ -59,20 +59,11 @@
  ┃ ┣ 📜views.py
  ┣ 📂templates
  ┃ ┣ 📂accounts
- ┃ ┃ ┣ 📜login.html
- ┃ ┃ ┣ 📜profile.html
- ┃ ┃ ┗ 📜register.html
  ┃ ┣ 📂blog
- ┃ ┃ ┣ 📜post.html
- ┃ ┃ ┣ 📜write.html
  ┃ ┣ 📂boardapp
- ┃ ┃ ┣ 📜post_detail.html
- ┃ ┃ ┣ 📜post_list.html
  ┃ ┣ 📂main
- ┃ ┃ ┣ 📜home.html
  ┣ 📂static
  ┃ ┣ 📂css
- ┃ ┃ ┗ 📜styles.css
  ┃ ┣ 📂js
  ┃ ┃ ┗ 📜scripts.js
  ┣ 📂media
