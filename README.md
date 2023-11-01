@@ -1,5 +1,9 @@
 # Django MiniProject1 - Django Technical Blog
 
+
+https://github.com/maxkim77/DjangoBlogProject/assets/141907655/e40e133e-97fa-46b3-a323-a658b765e74b
+
+
 ## 1. 목표와 기능
 
 ### 1.1 목표
