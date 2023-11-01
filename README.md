@@ -1,7 +1,7 @@
 # Django MiniProject1 - Django Technical Blog
 
 
-![promo](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/142f5a0b-604d-4a36-97d3-44e6f37a7a6a)
+![promo](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/142f5a0b-604d-4a36-97d3-44e6f37a7a6a  width="400" height="200")
 
 
 
