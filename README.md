@@ -66,6 +66,16 @@
 ```
 
 ### 4.2 URL 구조
+- main
+
+  
+| App       | URL                                        | Views Function    | HTML File Name                        | Note           |
+|-----------|--------------------------------------------|-------------------|---------------------------------------|----------------|
+| main      | '/'                                        | home              | main/home.html                        |                |
+| main      | '/about/'                                  | about             | main/about.html                       |                |
+| main      | '/generator/'                               | generator         | main/generator.html                   |                |
+
+
 - accounts
 
   
@@ -75,16 +85,6 @@
 | accounts  | 'login/'                                   | login             | accounts/login.html                   |                |
 | accounts  | 'logout/'                                  | logout            | accounts/logout.html                  |                |
 | accounts  | 'profile/'                                 | profile           | accounts/profile.html                 | 비밀번호변경기능 / 프로필 수정/ 닉네임추가 |
-
-
-- main
-
-  
-| App       | URL                                        | Views Function    | HTML File Name                        | Note           |
-|-----------|--------------------------------------------|-------------------|---------------------------------------|----------------|
-| main      | '/'                                        | home              | main/home.html                        |                |
-| main      | '/about/'                                  | about             | main/about.html                       |                |
-| main      | '/generator/'                               | generator         | main/generator.html                   |                |
 
 
 - blog
