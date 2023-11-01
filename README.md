@@ -94,10 +94,10 @@
 |-----------|--------------------------------------------|-------------------|---------------------------------------|----------------|
 | blog      | 'blog/'                                    | blog              | blog/blog.html                        |                |
 | blog      | 'blog/<int:pk>/'                           | post              | blog/post.html                        |                |
-| blog      | 'blog/write/'                              | write             | blog/write.html                       | - 카테고리 지정, 사진업로드, 게시글 조회수 반영|
-| blog      | 'blog/edit/<int:pk>/'                      | edit              | blog/edit.html                        | - 게시물목록보기 상세보기 반영 |
-| blog      | 'blog/delete/<int:pk>/'                    | delete            | blog/delete.html                      | - 삭제후 게시글 목록화면으로 돌아감 |
-| blog      | 'blog/search/'                             | search            | blog/search.html                      | - 주제와 카테고리에 따라 검색, 시간순에 따라 정렬|
+| blog      | 'blog/write/'                              | write             | blog/write.html                       | 카테고리 지정, 사진업로드,<br> 게시글 조회수 반영|
+| blog      | 'blog/edit/<int:pk>/'                      | edit              | blog/edit.html                        | 게시물목록보기 |
+| blog      | 'blog/delete/<int:pk>/'                    | delete            | blog/delete.html                      |                 |
+| blog      | 'blog/search/'                             | search            | blog/search.html                      | 주제와 카테고리에 따라 검색,<br> 시간순에 따라 정렬|
 | blog      | 'post/<int:post_pk>/comment/'              | comment_new       | blog/comment_form.html                |                |
 | blog      | 'post/<int:post_pk>/comment/<br><int:parent_pk>/' | reply_new    | blog/comment_form.html                |                |
 | blog      | 'post/<int:pk>/like/'                      | like_post         | blog/post.html                        |                |
