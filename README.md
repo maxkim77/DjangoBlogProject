@@ -145,7 +145,7 @@
 - 4단계: 추가 기능 구현, 테스팅
 - 5단계: 배포 및 최종 테스팅
 
-## 5. UI/BM
+## 5. UI 기획
 
 
 ![슬라이드1](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/a738e808-5df8-4ea4-8465-9344b5df46eb)
