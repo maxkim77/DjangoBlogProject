@@ -158,8 +158,9 @@
 
   
 관계 정의 : 
-- Post의 author_id 필드는 users 테이블의 id 필드와 연결,
+- Post와 Board의 author_id 필드는 users 테이블의 id 필드와 연결,
 - PostLikes와 PostTags 테이블은 Post와 User, Post와 Tag 사이의 다대다 관계
+- BoardComment와 Boardlikes 테이블은 Board, User과 다대일 관계
 
 
 ## 7. 메인기능
