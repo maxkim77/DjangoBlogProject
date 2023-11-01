@@ -87,6 +87,21 @@
 | accounts  | 'profile/'                                 | profile           | accounts/profile.html                 | 비밀번호변경기능 / 프로필 수정/ 닉네임추가 |
 
 
+- boardapp
+
+
+| App       | URL                                        | Views Function    | HTML File Name                        | Note           |
+|-----------|--------------------------------------------|-------------------|---------------------------------------|----------------|
+| boardapp  | 'board/'                                   | board             | boardapp/post_list.html               | 게시판 목록 |
+| boardapp  | 'board/<int:pk>/'                          | post_detail       | boardapp/post_detail.html            | 게시글 상세보기 |
+| boardapp  | 'board/write/'                             | post_write        | boardapp/post_write.html             | 게시글 작성 |
+| boardapp  | 'board/edit/<int:pk>/'                     | post_edit         | boardapp/post_edit.html              | 게시글 수정 |
+| boardapp  | 'board/delete/<int:pk>/'                   | post_delete       | boardapp/post_delete.html            | 게시글 삭제 |
+| boardapp  | 'board/<int:pk>/comment/'                  | comment_create    | boardapp/comment_form.html           | 댓글 작성 |
+| boardapp  | 'board/<int:pk>/comment/<br><int:comment_pk>/edit/' | comment_edit | boardapp/comment_form.html           | 댓글 수정 |
+| boardapp  | 'board/<int:pk>/comment/<br><int:comment_pk>/delete/' | comment_delete | boardapp/comment_confirm_delete.html| 댓글 삭제 |
+
+
 - blog
 
 
@@ -105,19 +120,6 @@
 | blog      | 'comment/<int:pk>/delete/'                 | comment_delete    | blog/comment_confirm_delete.html      |                |
 
 
-- boardapp
-
-
-| App       | URL                                        | Views Function    | HTML File Name                        | Note           |
-|-----------|--------------------------------------------|-------------------|---------------------------------------|----------------|
-| boardapp  | 'board/'                                   | board             | boardapp/post_list.html               | 게시판 목록 |
-| boardapp  | 'board/<int:pk>/'                          | post_detail       | boardapp/post_detail.html            | 게시글 상세보기 |
-| boardapp  | 'board/write/'                             | post_write        | boardapp/post_write.html             | 게시글 작성 |
-| boardapp  | 'board/edit/<int:pk>/'                     | post_edit         | boardapp/post_edit.html              | 게시글 수정 |
-| boardapp  | 'board/delete/<int:pk>/'                   | post_delete       | boardapp/post_delete.html            | 게시글 삭제 |
-| boardapp  | 'board/<int:pk>/comment/'                  | comment_create    | boardapp/comment_form.html           | 댓글 작성 |
-| boardapp  | 'board/<int:pk>/comment/<br><int:comment_pk>/edit/' | comment_edit | boardapp/comment_form.html           | 댓글 수정 |
-| boardapp  | 'board/<int:pk>/comment/<br><int:comment_pk>/delete/' | comment_delete | boardapp/comment_confirm_delete.html| 댓글 삭제 |
 
 
 
