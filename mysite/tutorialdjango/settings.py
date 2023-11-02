@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'blog',
     'main',
+    'boardapp',
     # 'django-widget-tweaks',
 ]
 

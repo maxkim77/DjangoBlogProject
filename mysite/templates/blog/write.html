@@ -7,7 +7,7 @@
             <div class="col-md-8">
                 <div class="card shadow">
                     <div class="card-body">
-                        <h1 class="card-title text-center">새 게시글 작성</h1>
+                        <h1 class="card-title text-center">New Post</h1>
                         <form method="post" enctype="multipart/form-data" class="mt-4">
                             {% csrf_token %}
                             {% for field in form %}
@@ -26,7 +26,7 @@
                                 </div>
                             {% endfor %}
                             <div class="text-center">
-                                <input type="submit" value="게시글 작성" class="btn btn-primary">
+                                <input type="submit" value="Write" class="btn btn-primary">
                             </div>
                         </form>
                     </div>

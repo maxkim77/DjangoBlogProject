@@ -7,19 +7,32 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Post, Comment, Tag
 from .forms import PostForm, CommentForm
 from django.core.paginator import Paginator
-
+# import os
+from django.views import View
 from .models import Post
 from django.urls import reverse_lazy
 
 class PostDetailView(DetailView):
     template_name = 'blog/post.html'
     model = Post
+    
+    # def get(self, request, *args, **kwargs):
+    #     post = Post.objects.get(pk=kwargs['pk'])
+    #     file_extension = os.path.splitext(post.file_upload.url)[1] if post.file_upload else None
+    #     return render(request, 'blog/post.html', {'post':post, 'file_extension': file_extension})
+    
+    def get_object(self, queryset=None):
+        obj = super().get_object(queryset)
+        obj.view_count += 1 #조회수 증가
+        obj.save(update_fields=['view_count'])
+        return obj
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         post = self.get_object()
         context['main_comments'] = post.comments.filter(parent__isnull=True)
         context['comment_form'] = CommentForm()
+        context['tags'] = post.tags.all() 
         return context
     
 post = PostDetailView.as_view()
@@ -150,3 +163,16 @@ class BlogListView(ListView):
     def get_queryset(self):
         # 기본 쿼리셋은 'created_at'을 기준으로 역순 정렬
         return Post.objects.all().order_by('-created_at')
+
+from django.shortcuts import get_object_or_404, redirect
+from .models import Post
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def like_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.user in post.likes.all():
+        post.likes.remove(request.user)
+    else:
+        post.likes.add(request.user)
+    return redirect('blog:post', pk=post.pk)

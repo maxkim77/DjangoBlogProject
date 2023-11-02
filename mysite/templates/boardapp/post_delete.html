@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container d-flex align-items-center justify-content-center" style="height:100vh">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card" style = "width:300px">
+                <div class="card-body" >
+                    <form method="post">
+                        {% csrf_token %}
+                        <p class="text-center">Are you sure to delete this post: "{{ post.title }}" ?</p>
+                        <div class="d-flex justify-content-center">
+                            <a href="{% url 'boardapp:post_list' %}" class="btn btn-secondary mr-2">Cancel</a>
+                            <br>
+                            <button type="submit" class="btn btn-danger" style = "width:30%">Delete</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

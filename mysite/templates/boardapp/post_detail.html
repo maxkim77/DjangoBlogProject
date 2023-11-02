@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container" >
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h1 class="text-center">{{ post.title }}</h1>
+                </div>
+                <div class="card-body">
+                    <p>Author: {{ post.author }}</p>
+                    <p>Upload Date: {{ post.created_at }}</p>
+                    <p>{{ post.content }}</p>
+                    {% if post.file %}
+                    {% with file_extension=post.file.url|slice:"-5:" %}
+                    {% if file_extension == ".mp4" or file_extension == ".webm" or file_extension == ".ogg" %}
+                        <video src="{{ post.file.url }}" controls></video>
+                    {% elif file_extension == ".jpg" or file_extension == ".png" or file_extension == ".gif" %}
+                        <img src="{{ post.file.url }}" alt="{{ post.title }}">
+                    {% else %}
+                        <a href="{{ post.file.url }}">Download file</a>
+                    {% endif %}
+                    {% endwith %}
+                    {% endif %}
+                    <br>
+                    <br>
+                                  
+                    <!-- ... 기존의 코드 ... -->
+                    <a href="{% url 'boardapp:like_post' post.pk %}" class="btn btn-dark">
+                        💖 ({{ post.total_likes }})
+                    </a>
+                    
+                </div>
+
+            </div>
+                            <!-- Comments Section -->
+                            <div class="mt-5">
+                                <h5>Comments:</h5>
+                                {% for comment in post.board_comments.all %}
+                                <div class="card mt-2">
+                                    <div class="card-body">       
+                                        <p>{{ comment.author }} | {{ comment.created_at }}</p>
+                                        <p>{{ comment.content }}</p>
+                                        <a href = "{% url 'boardapp:comment_edit' post.pk comment.pk %}" class = "btn btn-secondary btn-sm">Edit</a>
+                                        {% if comment.author == request.user %}
+                                        <a href="{% url 'boardapp:comment_delete' post.pk comment.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                                        {% endif %}                    
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <!-- Comment Form -->
+                            <div class="mt-5">
+                                <form method="post" action="{% url 'boardapp:comment_create' post.pk %}">
+                                    {% csrf_token %}
+                                    {{ form.as_p }}
+                                    <input type="submit" value="Submit" class="btn btn-primary">
+                                </form>
+                            </div>
+            <div class="card-footer text-center" style = "height:50vh">
+                <a href="{% url 'boardapp:post_list' %}" class="btn btn-primary">List</a>
+                <a href="{% url 'boardapp:post_edit' post.pk %}"class="btn btn-secondary">Edit</a>
+                <a href="{% url 'boardapp:post_delete' post.pk %}"class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -22,25 +22,46 @@
                                     <!-- Post title-->
                                     <h1 class="fw-bolder mb-1">{{post.category}}&nbsp{{ post.title }}</h1>
                                     <!-- Post meta content-->
-                                    <div class="text-muted fst-italic mb-2">업로드날짜:{{ post.created_at }}</div>
-                                    <div class="text-muted fst-italic mb-2">조회수:{{ post.view_count }}</div>
+                                    <div class="text-muted fst-italic mb-2">Upload Date:{{ post.created_at }}</div>
+                                    <div class="text-muted fst-italic mb-2">Views:{{ post.view_count }}</div>
                                     <!-- Post categories-->
-                                    <div class="text-muted fst-italic mb-2">{{ post.tags }}</div>
+                                    <!-- Post categories-->
+                                    <div class="text-muted fst-italic mb-2">
+                                        {% for tag in tags %}
+                                            Tags:{{ tag.name }}
+                                            {% if not forloop.last %}, {% endif %}
+                                        {% endfor %}
+                                    </div>
+
                                 </header>
                                 <!-- Preview image figure-->
                                 {% if object.image %}
                                 <img class="img-fluid rounded-3 mb-3" src="{{ post.image.url }}" alt="image">
                                 {% else %}
-                                <p>이미지가 없습니다.</p>
+                                <p>No Image</p>
                                 {% endif %} 
                                 <!-- Post content-->
                                 <section class="mb-5">
                                     <p class="fs-5 mb-4">{{ post.content }}</p>
                                     {% if post.file_upload %}
-                                    <video src="{{post.file_upload.url}}" controls></video>
-                                    {% endif %}                            
+                                    {% if file_extension == ".mp4" or file_extension == ".webm" or file_extension == ".ogg" %}
+                                        <video src="{{ post.file_upload.url }}" controls></video>
+                                    {% elif file_extension == ".jpg" or file_extension == ".png" or file_extension == ".gif" %}
+                                        <img src="{{ post.file_upload.url }}" alt="{{ post.title }}">
+                                    {% else %}
+                                        <a href="{{ post.file_upload.url }}">Download file</a>
+                                    {% endif %}
+                                {% endif %}
+                                                         
                                 </section>
                             </article>
+                            <!-- 좋아요 버튼 -->
+                            <a href="{% url 'blog:like_post' post.pk %}" class="btn btn-outline-primary">
+                            <i class="bi bi-heart{% if request.user in post.likes.all %}-fill{% endif %}"></i>
+                            {{ post.likes.count }}
+                                </a>
+                            <br>
+                            <br>
                             <!-- Comments section-->
                             <section>
                                 <div class="card bg-light">
@@ -52,19 +73,19 @@
                                         <div class="mb-4">
                                             <!-- Parent comment-->
 
-                                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                            {% comment %} <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div> {% endcomment %}
 
 
                                             <div class="ms-3 w-100">
-                                                <div class="fw-bold">작성자:{{comment.author}}</div>
-                                                <div class="fw-bold">작성일시:{{comment.updated_at}}</div>
+                                                <div class="fw-bold">Author:{{comment.author}}</div>
+                                                <div class="fw-bold">Date:{{comment.updated_at}}</div>
                                                {{comment.message}}
                                                <div class="text-muted fst-italic">{{ comment.updated_at }}</div>
                                                {% if request.user == comment.author %}
-                                               <a href="{% url 'blog:comment_update' comment.pk %}">수정</a>
-                                               <a href="{% url 'blog:comment_delete' comment.pk %}">삭제</a>
+                                               <a href class="btn btn-primary"="{% url 'blog:comment_update' comment.pk %}">Edit</a>
+                                               <a href class="btn btn-secondary"="{% url 'blog:comment_delete' comment.pk %}">Delete</a>
                                                {% endif %}
-                                               <a href="{% url 'blog:reply_new' post.pk comment.pk %}">답글 달기</a>
+                                               <a href class="btn btn-danger"="{% url 'blog:reply_new' post.pk comment.pk %}">Comment</a>
             
                                                <!-- 대댓글 표시 -->
                                                {% for reply in comment.replies.all %}
@@ -73,8 +94,10 @@
                                                        <p>{{ reply.author }}</p>
                                                        <p>{{ reply.updated_at }}</p>
                                                    </div>
+                                                   <br>
                                                {% endfor %}
                                             </div>
+                                            <br>
                                             {% endfor %}
                                         </div>
 
@@ -83,13 +106,13 @@
                                                 <div class="container my-5">
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <h2 class="mb-4">댓글 작성</h2>
+                                                            <h2 class="mb-4">Comment</h2>
                                                             <form action="{% url 'blog:comment_new' post.pk %}" method="post" class="mb-4">
                                                                 {% csrf_token %}
                                                                 <div class="mb-3">
                                                                     <textarea class="form-control" id="id_message" name="message" rows="3">{{ comment_form.message.value|default_if_none:""}}</textarea>
                                                                 </div>
-                                                                <input type="submit" class="btn btn-primary" value="댓글 작성">
+                                                                <input type="submit" class="btn btn-primary" value="Comment">
                                                             </form>
                                                         </div>
                                                     </div>
@@ -99,10 +122,10 @@
                                                 
                             </section>
                             <br>
-                            <a href="{% url 'blog:blog' %}" class="btn btn-primary">목록</a>
+                            <a href="{% url 'blog:blog' %}" class="btn btn-primary">List</a>
                             {% if user == post.author %}
-                                <a href="{% url 'blog:edit' post.pk %}" class="btn btn-secondary">수정</a>
-                                <a href="{% url 'blog:delete' post.pk %}" class="btn btn-danger">삭제</a>
+                                <a href="{% url 'blog:edit' post.pk %}" class="btn btn-secondary">Edit</a>
+                                <a href="{% url 'blog:delete' post.pk %}" class="btn btn-danger">Delete</a>
                             {% endif %}
                             
                         </div>

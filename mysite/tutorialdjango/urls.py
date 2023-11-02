@@ -11,7 +11,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('blog/', include('blog.urls', namespace='blog')),  # blog 앱에 대한 URL 네임스페이스 지정
-    path('accounts/', include('accounts.urls', namespace='accounts'))
+    path('accounts/', include('accounts.urls', namespace='accounts')),
+    path('board/', include('boardapp.urls', namespace='boardapp')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

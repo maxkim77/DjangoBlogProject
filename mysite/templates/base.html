@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>{% block title %}ArtMax{%endblock title%}</title>
+        <title >{% block title %}ArtMax{%endblock title%}</title>
    
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}">
@@ -20,7 +20,7 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html">Art Max</a>
+                    <a class="navbar-brand" href="{% url 'home' %}">Art Max</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -36,6 +36,7 @@
                                     {% comment %} <li><a class="dropdown-item" href="{% url 'blog:post' %}">Blog Post</a></li> {% endcomment %}
                                 </ul>
                             </li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'boardapp:post_list' %}">Board</a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
@@ -76,12 +77,13 @@
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Art Max 2023</div></div>
                     <div class="col-auto">
-                        <a class="link-light small" href="#!">GitHub</a>
+                        <a class="link-light small" href="https://github.com/maxkim77" style="text-decoration: none;">GitHub</a>
                         <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Velog</a>
+                        <a class="link-light small" href="https://velog.io/@maxkim7723" style="text-decoration: none;">Velog</a>
                         <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="#!">Linkedin</a>
+                        <a class="link-light small" href="https://www.linkedin.com/in/kjw77/"  style="text-decoration: none;">Linkedin</a>
                     </div>
+                    
                 </div>
             </div>
         </footer>

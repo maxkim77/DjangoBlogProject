@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="center-form" style="height:90vh; display:flex; align-items:center; justify-content:center;">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table">
+            <!-- ... 중략 ... -->
+            <tr>
+                <th><label for="category">Category</label></th>
+                <td>{{ form.category }}</td>
+            </tr>
+            <tr>
+                <th><label for="board-title">Title</label></th>
+                <td>{{ form.title }}</td>
+            </tr>
+            <tr>
+                <th><label for="board-content">Content</label></th>
+                <td>{{ form.content }}</td>
+            </tr>
+            <tr>
+                <th><label for="board-file">Attatchment</label></th>
+                <td>{{ form.file }}</td>
+            </tr>
+            <!-- ... 중략 ... -->
+        </table>
+        <div class="btn-group">
+            <button type="submit" class="btn btn-primary">Edit</button>
+            <a href="{% url 'boardapp:post_list' %}" class="btn btn-secondary">List</a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

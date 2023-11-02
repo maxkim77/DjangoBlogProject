@@ -3,6 +3,7 @@ from django.db import models
 from django.conf import settings
 import django.utils.timezone
 from django.contrib import admin
+from django.contrib.auth.models import User
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
@@ -16,6 +17,7 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     view_count = models.PositiveIntegerField(default=0)
     tags = models.ManyToManyField('Tag', blank = True)
+    likes = models.ManyToManyField(User, related_name='likes', blank = True)
     is_notice = models.BooleanField(default=False, verbose_name="공지사항 여부") #추가
 
     def __str__(self):

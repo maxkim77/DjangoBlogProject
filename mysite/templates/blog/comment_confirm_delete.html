@@ -6,12 +6,12 @@
     <div class="d-flex justify-content-center align-items-center h-100">
         <div class="card w-50">
             <div class="card-body">
-                <h5 class="card-title">댓글 삭제 확인</h5>
-                <p class="card-text">정말로 이 댓글을 삭제하시겠습니까?</p>
+                <h5 class="card-title">Delete Confirmation</h5>
+                <p class="card-text">Are you sure to delete this comment?</p>
                 <form method="post" class="form-group">
                     {% csrf_token %}
-                    <input type="submit" class="btn btn-danger" value="삭제">
-                    <a href="{{ object.get_absolute_url }}" class="btn btn-secondary">취소</a>
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                    <a href="{{ object.get_absolute_url }}" class="btn btn-secondary">Cancel</a>
                 </form>
             </div>
         </div>

@@ -13,17 +13,17 @@
 
 {% block content %}
 <div class="container d-flex flex-column align-items-center justify-content-center" style="height: 90vh;">
-  <h1 class="mb-4">{{ user.username }}의 프로필 페이지입니다.</h1>
+  <h1 class="mb-4">Welcome to {{ user.username }}'s Profile</h1>
   
   <!-- 사용자 추가 정보 -->
   <div class="mb-3">
-    <p><strong>이메일:</strong> {{ user.email }}</p>
+    <p><strong>email:</strong> {{ user.email }}</p>
     {% if user.userprofile %}
-      <p><strong>주소:</strong> {{ user.userprofile.address }}</p>
-      <p><strong>전화번호:</strong> {{ user.userprofile.phone }}</p>
+      <p><strong>address:</strong> {{ user.userprofile.address }}</p>
+      <p><strong>phonenumber:</strong> {{ user.userprofile.phone }}</p>
     {% else %}
       <div class="alert alert-warning" role="alert">
-        사용자 추가 정보가 없습니다.
+        There is no further info.
       </div>
     {% endif %}
   </div>

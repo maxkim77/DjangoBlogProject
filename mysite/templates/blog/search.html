@@ -7,9 +7,9 @@
             <div class="col-md-6">
         <h1 class="mb-4 text-center">Bulltein Boards Search</h1>
         <form action="/blog/search/" method="get" class="input-group mb-3">
-            <input type="text" id="query" name="q" class="form-control" placeholder="검색어를 입력하세요">
+            <input type="text" id="query" name="q" class="form-control" placeholder="Input kewords">
             <div class="input-group-append">
-                <input type="submit" value="검색" class="btn btn-primary">
+                <input type="submit" value="Search" class="btn btn-primary">
             </div>
         </form>
 
@@ -19,7 +19,7 @@
                 <a href ="/blog/{{ post.pk }}" style="text-decoration: none;">{{ post.title }}</a>
             </li>
             {% empty %}
-            <li class="list-group-item">검색 결과가 없습니다.</li>
+            <li class="list-group-item">No Result</li>
             {% endfor %}
         </ul>
         <br>
