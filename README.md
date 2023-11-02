@@ -34,7 +34,7 @@
 
 
 ## ✨3. 개발기술 & 환경 및 배포 URL
--개발 기술 및 환경
+- 개발 기술 및 환경
 
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
