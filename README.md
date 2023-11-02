@@ -33,8 +33,17 @@
 - 3단계: 블로그 기능 외 추가 기능 작성 및 배포
 
 
-## ✨3. 개발환경 및 배포 URL
-- 개발환경: HTML, CSS, JS, Bootstrap 5.3, Python 3.8, Django 3.2, PostgreSQL
+## ✨3. 개발기술 & 환경 및 배포 URL
+-개발 기술 및 환경
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Python](https://img.shields.io/badge/python-%2314354C.svg?style=for-the-badge&logo=python&logoColor=white)
+![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/postgresql-%23336791.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![VSCode](https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+
 - 배포 URL: http://your-blog.com
 
 ## 🎁4. 프로젝트 및 URL 구조와 개발일정
