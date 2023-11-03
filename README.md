@@ -8,8 +8,13 @@
 ## 🎈1. 목표와 기능
 
 ### 1.1 목표 및 배경
-- 배경: Django를 이용한 AI Image 갤러리형 블로그 개발
-- 목표 : 유저들이 Stable Diffusion API를 통해 AI Image 생성후 업로드 및 공유하며 AI Image 정보 공유
+- 배경:
+AI Image의 기술의 발달
+Digital Image 소통의 장 부족에 따른 블로그 개발
+
+- 목표 :
+Django를 이용한 AI Image 갤러리형 블로그 개발
+유저들이 Stable Diffusion API를 통해 AI Image 생성후 업로드 및 공유하며 AI Image 정보 공유
 
 
 ### 1.2 기능
