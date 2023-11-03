@@ -59,7 +59,7 @@
 
 
 ![VSCode](https://img.shields.io/badge/VSCode-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![GitHub stars](https://img.shields.io/github/stars/your-username/your-repo?style=social)
+![GitHub forks](https://img.shields.io/github/forks/your-username/your-repo?style=social)
 ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?&style=for-the-badge&logo=amazon-aws&logoColor=white)
 
 
