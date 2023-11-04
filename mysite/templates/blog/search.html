@@ -5,13 +5,74 @@
     <div class="container my-5" style ="height:85vh">
         <div class="row h-100 justify-content-center align-items-center">
             <div class="col-md-6">
-        <h1 class="mb-4 text-center">Bulltein Boards Search</h1>
-        <form action="/blog/search/" method="get" class="input-group mb-3">
-            <input type="text" id="query" name="q" class="form-control" placeholder="Input kewords">
-            <div class="input-group-append">
-                <input type="submit" value="Search" class="btn btn-primary">
-            </div>
-        </form>
+        <h1 class="mb-4 text-center">🖋Bulltein Boards Search</h1>
+        {% comment %} <form method="get" action="{% url 'blog:search' %}">
+            <input type="text" name="q" placeholder="Search..." value="{{ query }}">
+        
+            <!-- 카테고리 선택 드롭다운 -->
+            <select name="category">
+                <option value="">All Categories</option>
+                {% for category in categories %}
+                <option value="{{ category }}" {% if selected_category == category %}selected{% endif %}>{{ category }}</option>
+                {% endfor %}
+            </select>
+        
+            <!-- 태그 선택 드롭다운 -->
+            <select name="tag">
+                <option value="">All Tags</option>
+                {% for tag in tags %}
+                <option value="{{ tag.id }}" {% if selected_tag == tag.id %}selected{% endif %}>{{ tag.name }}</option>
+                {% endfor %}
+            </select>
+        
+            <button type="submit">Search</button>
+        </form> {% endcomment %}
+        <!-- Assuming you are using Bootstrap 4 or 5 -->
+<!-- 검색 폼 스타일링 예제 -->
+<!-- Assuming you are using Bootstrap 4 or 5 -->
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-6">
+            <form method="get" action="{% url 'blog:search' %}" class="mb-3">
+                <!-- Dropdowns for category and tag in the same row -->
+                <div class="row g-2">
+                    <div class="col">
+                        <select name="category" class="form-select">
+                            <option value="">All Categories</option>
+                            {% for category in categories %}
+                            <option value="{{ category }}" {% if selected_category == category %}selected{% endif %}>
+                                {{ category }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <br>
+                    <div class="col">
+                        <select name="tag" class="form-select">
+                            <option value="">All Tags</option>
+                            {% for tag in tags %}
+                            <option value="{{ tag.id }}" {% if selected_tag == tag.id %}selected{% endif %}>
+                                {{ tag.name }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <!-- Search input below the dropdowns -->
+
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search..." value="{{ query }}">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit">Search</button>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+
 
         <ul class="list-group">
             {% for post in posts %}

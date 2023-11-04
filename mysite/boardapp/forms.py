@@ -15,3 +15,8 @@ class BoardCommentForm(forms.ModelForm):
     class Meta:
         model = BoardComment
         fields =['content']
+
+
+#widget=forms.Select(attrs={'class':'form-select'})
+#이필드는 드롭다운 선택메뉴
+#BoardComment 모델의 content 필드만 폼에서 사용됨을 지정

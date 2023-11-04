@@ -10,7 +10,6 @@ class Board(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     file = models.FileField(upload_to='blog/files/%Y/%m/%d/', blank=True, null=True)    
     view_count = models.PositiveIntegerField(default=0)
-    # tags = models.ManyToManyField('Tag', blank = True)
     board_likes = models.ManyToManyField(User, related_name='board_likes', blank = True)
 
     def __str__(self):
@@ -24,3 +23,7 @@ class BoardComment(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+
+#models.Model 부모클래스역할
+#ForeignKey 한 모델이 다른 모델 종속
+#PoistiveIntegerField는 양의정수를 저장하는 데 사용

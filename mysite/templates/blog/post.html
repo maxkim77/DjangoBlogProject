@@ -10,7 +10,7 @@
                             <div class="d-flex align-items-center mt-lg-5 mb-4">
                                 {% comment %} <img class="img-fluid rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /> {% endcomment %}
                                 <div class="ms-3">
-                                    <div class="fw-bold">{{post.author}}</div>
+                                    <div class="fw-bold">[👦Author] : {{post.author}}</div>
                                 </div>
                             </div>
                         </div>
@@ -82,31 +82,31 @@
                                                {{comment.message}}
                                                <div class="text-muted fst-italic">{{ comment.updated_at }}</div>
                                                {% if request.user == comment.author %}
-                                               <a href class="btn btn-primary"="{% url 'blog:comment_update' comment.pk %}">Edit</a>
-                                               <a href class="btn btn-secondary"="{% url 'blog:comment_delete' comment.pk %}">Delete</a>
+                                               <a href ="{% url 'blog:comment_update' comment.pk %}" class="btn btn-primary">Edit</a>
+                                               <a href ="{% url 'blog:comment_delete' comment.pk %}" class="btn btn-secondary">Delete</a>
                                                {% endif %}
-                                               <a href class="btn btn-danger"="{% url 'blog:reply_new' post.pk comment.pk %}">Comment</a>
+                                               <a href ="{% url 'blog:reply_new' post.pk comment.pk %}" class="btn btn-danger">Comment</a>
             
-                                               <!-- 대댓글 표시 -->
-                                               {% for reply in comment.replies.all %}
-                                                   <div style="margin-left: 20px;">
-                                                       <p>{{ reply.message }}</p>
-                                                       <p>{{ reply.author }}</p>
-                                                       <p>{{ reply.updated_at }}</p>
-                                                   </div>
-                                                   <br>
-                                               {% endfor %}
-                                            </div>
-                                            <br>
-                                            {% endfor %}
-                                        </div>
+                                <!-- Replies -->
+                                {% for reply in comment.replies.all %}
+                                <div style="margin-left: 20px;">
+                                    <strong>Reply: </strong>{{ reply.message }}<br>
+                                    <strong>By: </strong>{{ reply.author }}<br>
+                                    {% if request.user == reply.author %}
+                                    <a href="{% url 'blog:comment_update' reply.pk %}" class="btn btn-primary">Edit</a>
+                                    <a href="{% url 'blog:comment_delete' reply.pk %}" class="btn btn-secondary">Delete</a>
+                                    {% endif %}
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endfor %}
 
                                         {% comment %} {%endfor%} {% endcomment %}
                                                 <!-- Child comment 1-->
                                                 <div class="container my-5">
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <h2 class="mb-4">Comment</h2>
+                                                            <h2 class="mb-4">📌Comment</h2>
                                                             <form action="{% url 'blog:comment_new' post.pk %}" method="post" class="mb-4">
                                                                 {% csrf_token %}
                                                                 <div class="mb-3">

@@ -1,20 +1,25 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}           
+<head>
+    <!-- ... -->
+    <script src="{% static 'static/js/script.js' %}"></script>
+</head>
             <!-- Header-->
-            <header class="py-5">
-                <div class="container px-5">
-                    <div class="row justify-content-center">
+        <header class="py-5">
+            <div class="container px-5">
+                <div class="row justify-content-center">
                         <div class="col-lg-8 col-xxl-6">
                             <div class="text-center my-5">
                                 <h1 class="fw-bolder mb-3">Maximize your AI Image</h1>
-                                <p class="lead fw-normal text-muted mb-4">Our mission is to simplify the process of creating IT-technology for everyone.</p>
-                                <a class="btn btn-primary btn-lg" href="#scroll-target">Read our story</a>
-                            </div>
+                                <p class="lead fw-normal text-muted mb-4">Our mission is to simplify the process of creating IT-technology for everyone.                                  
+                                </p>
+                             <a class="btn btn-primary btn-lg" href="#scroll-target">Read our story</a>
                         </div>
                     </div>
                 </div>
-            </header>
+            </div>
+        </header>
             <!-- About section one-->
             <section class="py-5 bg-light" id="scroll-target">
                 <div class="container px-5 my-5">
@@ -73,6 +78,17 @@
                     </div>
                 </div>
             </section>
+            <script type="text/javascript">
+                var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+                (function(){
+                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                s1.async=true;
+                s1.src='https://embed.tawk.to/64d7581794cf5d49dc69f59d/1h7kj07d8';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                s0.parentNode.insertBefore(s1,s0);
+                })();
+                </script>
         </main>
 
         {% endblock %}

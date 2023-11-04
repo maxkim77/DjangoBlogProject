@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    padding-top: 50px;
+  }
+
+  h2 {
+    color: #d9534f;
+  }
+
+  p {
+    color: #666;
+  }
+
+  .error-container {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 400px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    border-radius: 5px;
+  }
+
+  .error-container p {
+    margin: 20px 0;
+    line-height: 1.6;
+  }
+
+  .check-url {
+    color: #5cb85c;
+    text-decoration: none;
+    font-weight: bold;
+  }
+</style>
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+  <div class="error-container" style="text-align: center;">
+  <h2>존재하지 않는 글입니다.</h2>
+  <p>요청하신 페이지를 찾을 수 없습니다.<br> URL을 확인해 주세요.</p>
+</div>
+</div>
+{% endblock %}

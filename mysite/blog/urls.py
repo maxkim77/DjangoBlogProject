@@ -6,8 +6,7 @@ app_name = 'blog'
 
 urlpatterns = [
     path('', BlogListView.as_view(), name='blog'),
-path('<int:pk>/', PostDetailView.as_view(), name='post'),
-
+    path('<int:pk>/', PostDetailView.as_view(), name='post'),
     path('write/', CreatePostView.as_view(), name ='write'),
     path('edit/<int:pk>/', UpdatePostView.as_view(), name='edit'),
     path('delete/<int:pk>/', DeletePostView.as_view(), name='delete'),
@@ -18,3 +17,7 @@ path('<int:pk>/', PostDetailView.as_view(), name='post'),
     path('comment/<int:pk>/update/', CommentUpdateView.as_view(), name='comment_update'),
     path('comment/<int:pk>/delete/', CommentDeleteView.as_view(), name='comment_delete'),
 ]
+
+# urls.py
+from django.conf.urls import handler404
+handler404 = 'blog.views.handler404'
