@@ -1,0 +1,4 @@
+Django==3.2  # Django 프로젝트의 버전 (예시)
+gunicorn==20.0.4  # WSGI HTTP 서버
+psycopg2-binary==2.8.6  # PostgreSQL 데이터베이스 어댑터
+django-widget-tweaks==1.4.8  # widget_tweaks 라이브러리의 버전 (예시)
