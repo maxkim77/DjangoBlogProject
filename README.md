@@ -76,7 +76,6 @@
 
 
 ![Stable Diffusion](https://img.shields.io/badge/Stable%20Diffusion-4285F4?style=for-the-badge&logo=stablediffusion&logoColor=white)
-![ChatGPT](https://img.shields.io/badge/ChatGPT-008080?style=for-the-badge&logo=openai&logoColor=white)
 ![tawk.to](https://img.shields.io/badge/tawk.to-1EAE72?style=for-the-badge&logo=tawkto&logoColor=white)
 
 
