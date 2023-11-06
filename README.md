@@ -420,7 +420,7 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
 
     
 ```
-    if request.method == "POST":
+if request.method == "POST":
 ```
 
 
@@ -430,10 +430,10 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
     - 해결방안 : 해당 필드에 'null=True' 옵션추가
 
     
-    ```
-    #models.py
-    summary = models.TextFeild(null=True)
-    ```
+```
+#models.py
+summary = models.TextFeild(null=True)
+```
 
 
     **파일 업로드 후 표시문제**
@@ -442,22 +442,22 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
     - 해결방안: post_detail 뷰에서 파일 존재여부 확인후 이를 템플릿에 전달, 템플릿에서는 file_exists 변수를 사용하여 조건부 렌더링 수행, 다음과 같이 뷰 및 템플릿 수정
 
     
-    ```
+```
     def post_detail(request, pk):
         post = get_object_or_404(Board, pk=pk)
         post.view_count += 1
         file_exists = bool(post.file)
         return render(request, 'boardapp/post_detail.html', {'post': post, 'file_exists': file_exists})
-    ```
+```
     
     
-    ```
-    {% if file_exists %}
-        {% with file_extension = post.file.url|slice:"-5:" %}
-        <!-- --!>
-        {% endwith %}
-    {% endif %}       
-    ```
+```
+{% if file_exists %}
+    {% with file_extension = post.file.url|slice:"-5:" %}
+    <!-- --!>
+    {% endwith %}
+{% endif %}       
+```
 
 ### 10.2 알게된 점
 
@@ -496,20 +496,19 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
     - Django의 폼 필드의 HTML을 보다 쉽게 제어할 수 있게해주는 라이브러리 CSS 클래스 추가, 속성 변경 가능
 
  
-    ```
-    {% load widget_tweaks %}
-    <form method="post">
-        {% csrf_token %}
-    </form>
-    ```
+```
+{% load widget_tweaks %}
+<form method="post">
+    {% csrf_token %}
+</form>
+```
  
     
-    ```
-    {% render_field form.field_name class = "form-control" %} # 필드 특정조건에따라 렌더링하고 싶을때 사용
-
+```
+{% render_field form.field_name class = "form-control" %} # 필드 특정조건에따라 렌더링하고 싶을때 사용
     {{ field|add_class:"form-control"}} # |기호는 필터를 의미 이필터는 지정되 필드에 클래스를 추가
     
-    ```
+```
     
     
     본 프로젝트에선 두번째 방식으로 클래스에 부트스트랩클래스를 추가하여 디자인 하였음
@@ -523,10 +522,10 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
     - 템플릿에서는 주댓글에 대한 루프를돌면서 replies 관계형성
     
     
-    ```
-    {% for reply in comment.replies.all %}
-    {% endfor %}      
-    ```   
+```
+{% for reply in comment.replies.all %}
+{% endfor %}      
+```   
 
 
 ### 10.3 느낀점
