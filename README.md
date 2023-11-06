@@ -411,6 +411,7 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
 
 ## 📖 10. 총 정리
 
+
 ### 10.1 오류정리
 
 **SyntaxError in Views.py**
@@ -420,116 +421,89 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
 
 ```python
 if request.method == "POST":
-
-
-
-    **IntegerityError**
-    - 에러명 : 'IntegrityError'
-    - 문제상황 : 모델필드가 null 값을 허용 안함
-    - 해결방안 : 해당 필드에 'null=True' 옵션추가
-
-    
-```
-#models.py
-summary = models.TextFeild(null=True)
 ```
 
+**IntegrityError**
+- 에러명: 'IntegrityError'
+- 문제상황: 모델 필드가 null 값을 허용 안함
+- 해결방안: 해당 필드에 'null=True' 옵션 추가
 
-    **파일 업로드 후 표시문제**
-    - 에러명: ValueError
-    - 문제상황 : 템플릿에서 파일 확장자와 맞지 않는 파일을 올릴때는 표시가 안 되었음
-    - 해결방안: post_detail 뷰에서 파일 존재여부 확인후 이를 템플릿에 전달, 템플릿에서는 file_exists 변수를 사용하여 조건부 렌더링 수행, 다음과 같이 뷰 및 템플릿 수정
+```python
+# models.py
+summary = models.TextField(null=True)
+```
 
-    
+**파일 업로드 후 표시문제**
+- 에러명: ValueError
+- 문제상황: 템플릿에서 파일 확장자와 맞지 않는 파일을 올릴 때는 표시가 안 되었음
+- 해결방안: post_detail 뷰에서 파일 존재 여부 확인 후 이를 템플릿에 전달, 템플릿에서는 file_exists 변수를 사용하여 조건부 렌더링 수행, 다음과 같이 뷰 및 템플릿 수정
+
+```python
+def post_detail(request, pk):
+    post = get_object_or_404(Board, pk=pk)
+    post.view_count += 1
+    file_exists = bool(post.file)
+    return render(request, 'boardapp/post_detail.html', {'post': post, 'file_exists': file_exists})
 ```
-    def post_detail(request, pk):
-        post = get_object_or_404(Board, pk=pk)
-        post.view_count += 1
-        file_exists = bool(post.file)
-        return render(request, 'boardapp/post_detail.html', {'post': post, 'file_exists': file_exists})
-```
-    
-    
-```
+
+```html
 {% if file_exists %}
     {% with file_extension = post.file.url|slice:"-5:" %}
-    <!-- --!>
+    <!-- ... -->
     {% endwith %}
-{% endif %}       
+{% endif %}
 ```
 
 ### 10.2 알게된 점
 
-  
-    💡 **클래스형 뷰 목록**
-    
-    
-    - 제너릭뷰
-      
-    ✔ ListView : 게시목록을 보여 줌
+💡 **클래스형 뷰 목록**
 
+- 제너릭뷰
+  - ListView: 게시목록을 보여 줌
+  - DetailView: 게시물 상세 정보 보여 줌
+  - CreateView: 새로운 객체를 생성
+  - UpdateView: 기존 객체를 수정
+  - DeleteView: 객체를 삭제할 때 사용
+  - TemplateView: 정적 페이지를 렌더링
 
-    ✔ DetailView : 게시물 상세 정보 보여 줌
+- 믹스인(Mixins)
+  - LoginRequiredMixin: 사용자가 로그인 해야만 접근 할 수 있는 뷰
+  - UserPssesTextMixin: 사용자가 특정 텍스트를 통과해야만 뷰에 접근
 
+💡 **django-widget-tweaks**
+- Django의 폼 필드의 HTML을 보다 쉽게 제어할 수 있게 해주는 라이브러리 CSS 클래스 추가, 속성 변경 가능
 
-    ✔ CreateView : 새로운 객체를 생성
-
-  
-    ✔ UpdateView : 기존 객체를 수정
-
-  
-    ✔ DeleteView : 객체를 삭제할 때 사용
-
-  
-    ✔ TemplateView : 정적 페이지를 렌더링
-
-    - 믹스인(Mixins)
- 
-      
-    ✔ LoginRequiredMixin : 사용자가 로그인 해야만 접근 할 수 있는 뷰
-
-  
-    ✔ UserPssesTextMixin : 사용자가 특정 텍스트를 통과해야만 뷰에접근
-
-    💡 **django-widget-tweaks**
-    - Django의 폼 필드의 HTML을 보다 쉽게 제어할 수 있게해주는 라이브러리 CSS 클래스 추가, 속성 변경 가능
-
- 
-```
+```html
 {% load widget_tweaks %}
 <form method="post">
     {% csrf_token %}
 </form>
 ```
- 
-    
-```
-{% render_field form.field_name class = "form-control" %} # 필드 특정조건에따라 렌더링하고 싶을때 사용
-    {{ field|add_class:"form-control"}} # |기호는 필터를 의미 이필터는 지정되 필드에 클래스를 추가
-    
-```
-    
-    
-    본 프로젝트에선 두번째 방식으로 클래스에 부트스트랩클래스를 추가하여 디자인 하였음
 
-
-    💡 **대댓글 구현 방식**
-    - Comment 모델의 parent 필드를 통해 구현
-    - 사용자가 B라는 댓글을 달때 A의 대댓글로 지정하려는 경우, A라는 대댓글 ID는 parent_pk 파라미터로 전달
-    - CommentCreateView에서 이를 확인하여 B 댓글의 부모댓글 'parent 댓글로 A를 설정
-    - 이렇듯 parent필드를 통해 부모-자식간의 관계가 형성됨
-    - 템플릿에서는 주댓글에 대한 루프를돌면서 replies 관계형성
-    
-    
+```html
+{% render_field form.field_name class="form-control" %} # 필드 특정 조건에 따라 렌더링하고 싶을 때 사용
+{{ field|add_class:"form-control" }} # | 기호는 필터를 의미 이 필터는 지정된 필드에 클래스를 추가
 ```
+
+본 프로젝트에서는 두 번째 방식으로 클래스에 부트스트랩 클래스를 추가하여 디자인 하였음
+
+💡 **대댓글 구현 방식**
+- Comment 모델의 parent 필드를 통해 구현
+- 사용자가 B라는 댓글을 달 때 A의 대댓글로 지정하려는 경우, A라는 대댓글 ID는 parent_pk 파라미터로 전달
+- CommentCreateView에서 이를 확인하여 B 댓글의 부모댓글 'parent 댓글로 A를 설정
+- 이렇듯 parent 필드를 통해 부모-자식간의 관계가 형성됨
+- 템플릿에서는 주댓글에 대한 루프를 돌면서 replies 관계 형성
+
+```html
 {% for reply in comment.replies.all %}
-{% endfor %}      
-```   
-
+{% endfor %}
+```
 
 ### 10.3 느낀점
-    - Django의 편리함과 Python의 강력함을 느낄 수 있었던 유익한 프로젝트였음
-    - 스프링부트 자바 강의를 조금씩 듣고 있는데 많은 경험이 있는건 아니지만 따른 프레임 워크에 비해 효율적이고 빠르게 게시판을 만들 수 있음을 느낌
-    - 함수형과 클래스형 뷰 코드를 모두 사용해보기 위해 앱 개수가 늘어나다 보니 URL이 복잡해졌지만, 둘의 차이점에 대해 알 수 있었음
-    - 장고의 다양한 기능에 대해 깊이 연구 할 수 있는 기회가 됨
-    - 프로젝트를 하며 상상한 게시판을 직접 구현해 낼 수 있음에 좋았음. 끝.
+
+- Django의 편리함과 Python의 강력함을 느낄 수 있었던 유익한 프로젝트였음
+- 스프링부트 자바 강의를 조금씩 듣고 있는데 많은 경험이 있는건 아니지만 따른 프레임 워크에 비해 효율적이고 빠르게 게시판을 만들 수 있음을 느낌
+- 함수형과 클래스형 뷰 코드를 모두 사용해보기 위해 앱 개수가 늘어나다 보니 URL이 복잡해졌지만, 둘의 차이점에 대해 알 수 있었음
+- 장고의 다양한 기능에 대해 깊이 연구 할 수 있는 기회가 됨
+- 프로젝트를 하며 상상한 게시판을 직접 구현해 낼 수 있음에 좋았음. 끝.
+```
