@@ -221,6 +221,9 @@
 
 ## 🎲7. 메인기능
 - 게시글 작성, 수정, 삭제, 조회
+
+  ![1](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/c7cfc8a1-a39e-404e-9647-aac57c06d8d4)
+
 - 로그인/회원가입
 
 ## 🔔8. 추가기능
