@@ -11,7 +11,7 @@
 - 배경:
 
 
-✔︎ AI Image의 기술의 발달
+✔︎ Stable Diffusion, Dalle 등 AI Image의 기술의 발달
 
 
 ✔︎ AI 이미지에 대한 관심과 AI이미지용 블로그 주제가 많이 없다고 생각되어 해당 주제로 블로그 개발
