@@ -418,9 +418,10 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
     - 문제코드: 'if request.method = "POST":
     - 해결방안: 파이썬 조건문에서는 동등비교를 위해 '=='을 사용해야 함
 
-    
+```    
 ```
 if request.method == "POST":
+```
 ```
 
 
