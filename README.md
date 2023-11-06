@@ -383,6 +383,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
       if request.method == "POST":
       ```
     - 내용 : 파이썬 조건문에서는 동등비교를 위해 '=='을 사용해 야함
+ 
+    - **IntegerityError**
+    - 에러명 : 'IntegrityError'
+    - 문제상황 : 모델필드가 null 값을 허용 안함
+    - 해결방안 : 해당 필드에 'null=True' 옵션추가
+      ```
+      #models.py
+      summary = models.TextFeild(null=True)
+      ```
 - 느낀점
     - Django의 편리함과 Python의 강력함을 느낄 수 있었던 유익한 프로젝트였음
     - 스프링부트 자바 강의를 조금씩 듣고 있는데 많은 경험이 있는건 아니지만 따른 프레임 워크에 비해 효율적이고 빠르게 게시판을 만들 수 있음을 느낌
