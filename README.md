@@ -299,7 +299,8 @@
 
 
 📌  게시글 삭제 기능 구현
-![12](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/49060b6d-facf-4f07-b600-acc76e5cfe10)
+![12 (2)](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/52bcf349-654c-4733-86b5-3d4020a8bdc9)
+
 - 로그인을 한 유저만 해당 기능을 사용 할 수 있습니다.
 - 본인의 게시글이 아니라면 수정이 불가능합니다.
 - 게시글을 삭제하는 기능입니다.
