@@ -49,7 +49,8 @@
 ### 2.3 요구사항 분석 및 아이디어 기획
 
 
-<img width="691" alt="스크린샷 2023-11-03 오후 10 34 26" src="https://github.com/maxkim77/DjangoBlogProject/assets/141907655/7975cda0-9462-4be3-a769-53769ac8dcbc">
+![캡처](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/61b1e31b-8734-44e2-8a52-c85ff2a7caf2)
+
 
 
 ## ✨3. 개발기술 & 환경 및 배포 URL
