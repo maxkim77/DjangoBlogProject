@@ -437,19 +437,41 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
 - 알게된 점
     - **클래스형 뷰 목록**
     - 제너릭뷰
+      
     ✔ ListView : 게시목록을 보여 줌
+
+
     ✔ DetailView : 게시물 상세 정보 보여 줌
+
+
     ✔ CreateView : 새로운 객체를 생성
+
+  
     ✔ UpdateView : 기존 객체를 수정
+
+  
     ✔ DeleteView : 객체를 삭제할 때 사용
+
+  
     ✔ TemplateView : 정적 페이지를 렌더링
 
     - 믹스인(Mixins)
+ 
+      
     ✔ LoginRequiredMixin : 사용자가 로그인 해야만 접근 할 수 있는 뷰
+
+  
     ✔ UserPssesTextMixin : 사용자가 특정 텍스트를 통과해야만 뷰에접근
 
     - **django-widget-tweaks**
     - Django의 폼 필드의 HTML을 보다 쉽게 제어할 수 있게해주는 라이브러리 CSS 클래스 추가, 속성 변경 가능
+ 
+    ```
+    {% load widget_tweaks %}
+    <form method="post">
+        {% csrf_token %}
+    </form>
+    ```
     ```
     {% render_field form.field_name class = "form-control" %} # 필드 특정조건에따라 렌더링하고 싶을때 사용
 
