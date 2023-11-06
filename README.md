@@ -378,12 +378,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     - **SyntaxError in Views.py**
     - 에러명: 'SyntaxError'
     - 문제코드: 'if request.method = "POST":
-    - 수정코드:
-      ```
+    - 해결방안:
+      파이썬 조건문에서는 동등비교를 위해 '=='을 사용해 야함
+     ```
       if request.method == "POST":
       ```
-    - 내용 : 파이썬 조건문에서는 동등비교를 위해 '=='을 사용해 야함
- 
+  
     - **IntegerityError**
     - 에러명 : 'IntegrityError'
     - 문제상황 : 모델필드가 null 값을 허용 안함
@@ -392,6 +392,25 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
       #models.py
       summary = models.TextFeild(null=True)
       ```
+
+     - **파일 업로드 후 표시문제**
+     - 에러명: ValueError
+     - 문제상황 : 템플릿에서 파일 확장자와 맞지 않는 파일을 올릴때는 표시가 안 되었음
+     - 해결방안: post_detail 뷰에서 파일 존재여부 확인후 이를 템플릿에 전달, 템플릿에서는 file_exists 변수를 사용하여 조건부 렌더링 수행, 다음과 같이 뷰 및 템플릿 수정
+       ```
+       def post_detail(request, pk):
+           post = get_object_or_404(Board, pk=pk)
+           post.view_count += 1
+           file_exists = bool(post.file)
+           return render(request, 'boardapp/post_detail.html', {'post': post, 'file_exists': file_exists})
+       ```
+       ```
+       {% if file_exists %}
+           {% with file_extension = post.file.url|slice:"-5:" %}
+           <!-- --!>
+           {% endwith %}
+       {% endif %}       
+       ```
 - 느낀점
     - Django의 편리함과 Python의 강력함을 느낄 수 있었던 유익한 프로젝트였음
     - 스프링부트 자바 강의를 조금씩 듣고 있는데 많은 경험이 있는건 아니지만 따른 프레임 워크에 비해 효율적이고 빠르게 게시판을 만들 수 있음을 느낌
