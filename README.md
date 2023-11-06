@@ -406,14 +406,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
         post.view_count += 1
         file_exists = bool(post.file)
         return render(request, 'boardapp/post_detail.html', {'post': post, 'file_exists': file_exists})
-     ```
-       ```
-       {% if file_exists %}
-           {% with file_extension = post.file.url|slice:"-5:" %}
-           <!-- --!>
-           {% endwith %}
-       {% endif %}       
-       ```
+    ```
+    ```
+    {% if file_exists %}
+        {% with file_extension = post.file.url|slice:"-5:" %}
+        <!-- --!>
+        {% endwith %}
+    {% endif %}       
+    ```
 
        
 - 느낀점
