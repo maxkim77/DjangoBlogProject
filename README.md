@@ -487,10 +487,10 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
     - CommentCreateView에서 이를 확인하여 B 댓글의 부모댓글 'parent 댓글로 A를 설정
     - 이렇듯 parent필드를 통해 부모-자식간의 관계가 형성됨
     - 템플릿에서는 주댓글에 대한 루프를돌면서 replies 관계형성
-      ```
-      {% for reply in comment.replies.all %}
-      {% endfor %}      
-      ```   
+    ```
+    {% for reply in comment.replies.all %}
+    {% endfor %}      
+    ```   
 - 느낀점
     - Django의 편리함과 Python의 강력함을 느낄 수 있었던 유익한 프로젝트였음
     - 스프링부트 자바 강의를 조금씩 듣고 있는데 많은 경험이 있는건 아니지만 따른 프레임 워크에 비해 효율적이고 빠르게 게시판을 만들 수 있음을 느낌
