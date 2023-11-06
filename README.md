@@ -417,6 +417,7 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
     - 에러명: 'SyntaxError'
     - 문제코드: 'if request.method = "POST":
     - 해결방안: 파이썬 조건문에서는 동등비교를 위해 '=='을 사용해야 함
+
     
     ```
     if request.method == "POST":
@@ -427,6 +428,7 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
     - 에러명 : 'IntegrityError'
     - 문제상황 : 모델필드가 null 값을 허용 안함
     - 해결방안 : 해당 필드에 'null=True' 옵션추가
+
     
     ```
     #models.py
@@ -438,6 +440,7 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
     - 에러명: ValueError
     - 문제상황 : 템플릿에서 파일 확장자와 맞지 않는 파일을 올릴때는 표시가 안 되었음
     - 해결방안: post_detail 뷰에서 파일 존재여부 확인후 이를 템플릿에 전달, 템플릿에서는 file_exists 변수를 사용하여 조건부 렌더링 수행, 다음과 같이 뷰 및 템플릿 수정
+
     
     ```
     def post_detail(request, pk):
@@ -446,6 +449,8 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
         file_exists = bool(post.file)
         return render(request, 'boardapp/post_detail.html', {'post': post, 'file_exists': file_exists})
     ```
+    
+    
     ```
     {% if file_exists %}
         {% with file_extension = post.file.url|slice:"-5:" %}
@@ -458,6 +463,8 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
 
   
     💡 **클래스형 뷰 목록**
+    
+    
     - 제너릭뷰
       
     ✔ ListView : 게시목록을 보여 줌
@@ -487,6 +494,7 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
 
     💡 **django-widget-tweaks**
     - Django의 폼 필드의 HTML을 보다 쉽게 제어할 수 있게해주는 라이브러리 CSS 클래스 추가, 속성 변경 가능
+
  
     ```
     {% load widget_tweaks %}
@@ -494,12 +502,16 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
         {% csrf_token %}
     </form>
     ```
+ 
+    
     ```
     {% render_field form.field_name class = "form-control" %} # 필드 특정조건에따라 렌더링하고 싶을때 사용
 
     {{ field|add_class:"form-control"}} # |기호는 필터를 의미 이필터는 지정되 필드에 클래스를 추가
     
     ```
+    
+    
     본 프로젝트에선 두번째 방식으로 클래스에 부트스트랩클래스를 추가하여 디자인 하였음
 
 
@@ -509,10 +521,13 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
     - CommentCreateView에서 이를 확인하여 B 댓글의 부모댓글 'parent 댓글로 A를 설정
     - 이렇듯 parent필드를 통해 부모-자식간의 관계가 형성됨
     - 템플릿에서는 주댓글에 대한 루프를돌면서 replies 관계형성
+    
+    
     ```
     {% for reply in comment.replies.all %}
     {% endfor %}      
     ```   
+
 
 ### 10.3 느낀점
     - Django의 편리함과 Python의 강력함을 느낄 수 있었던 유익한 프로젝트였음
