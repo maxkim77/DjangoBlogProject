@@ -360,7 +360,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 ![image](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/eae3e876-d441-43e5-a860-3c83097ab09c)
 
 
-## 🧑9. 역할 분담 : 김정원(Back-End Developer)
+## 🧑9. 개발자 : 김정원(Back-End Developer)
+
+
 
 ## 📖10. 느낀점
 - Django의 편리함과 Python의 강력함을 느낄 수 있었던 유익한 프로젝트였습니다.
