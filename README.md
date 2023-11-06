@@ -63,7 +63,7 @@
 
 
 ## ✨3. 개발기술 & 환경 및 배포 URL
-- 개발 기술 및 환경
+### 3.1 개발 기술 및 환경
 
 [FE]:
 
@@ -101,7 +101,7 @@
 - 특이사항으로는 tawk.to라는 실시간 채팅솔루션과 StableDiffusion API로 이미지 생성 가능하게 함(배포 버젼에서는 현재는 토큰수 소진으로 생성이 안되는 상황)
 - Github에 업로드한 레파지토리를 AWS lightsail에 clone 하여 배포
   
-- 배포 URL: http://your-blog.com
+### 3.2 배포 URL: http://your-blog.com
 
 ## 🎁4. 프로젝트 및 URL 구조와 개발일정
 
@@ -210,18 +210,27 @@
 ![슬라이드2](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/4da10f41-94e7-47df-ab20-de7bf4dccc53)
 
 
-## 🎉5. UI 기획
+## 🎉5. UI 기획 및 구성
 
 
 ![슬라이드1](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/a738e808-5df8-4ea4-8465-9344b5df46eb)
 
 
-✨구성 : 
+### 5.1 main 구성 : 
 - 메인 페이지
 - 설명 페이지
 - 이미지생성 페이지
+
+
+### 5.2 boardapp 구성:
 - 게시판형 블로그 페이지
-- 갤러리형형 블로그 페이지
+
+
+### 5.3 blog 구성:
+- 갤러리형 블로그 페이지
+
+
+### 5.4 accounts 구성:
 - 로그인/회원가입 페이지 등
 
 
@@ -231,11 +240,11 @@
 
 ![감귤마켓](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/687c5170-1b9a-4f76-bbca-64391dac488d)
 
-테이블 구조 : 
+### 6.1 테이블 구조 : 
 - users, Post, Comment, Tag, PostLikes, PostTags, UserProfile, Board, BoardComment, Boardlikes 
 
   
-관계 정의 : 
+### 6.2 관계 정의 : 
 - Post와 Board의 author_id 필드는 users 테이블의 id 필드와 연결,
 - PostLikes와 PostTags 테이블은 Post와 User, Post와 Tag 사이의 다대다 관계
 - BoardComment와 Boardlikes 테이블은 Board, User과 다대일 관계
@@ -401,7 +410,7 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
 
 
 ## 📖10. 총 정리
-- 오류정리
+### 10.1 오류정리
 
   
     - **SyntaxError in Views.py**
@@ -442,7 +451,7 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
     {% endif %}       
     ```
 
-- 알게된 점
+### 10.2 알게된 점
 
   
     💡 **클래스형 뷰 목록**
@@ -501,7 +510,8 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
     {% for reply in comment.replies.all %}
     {% endfor %}      
     ```   
-- 느낀점
+
+### 10.3 느낀점
     - Django의 편리함과 Python의 강력함을 느낄 수 있었던 유익한 프로젝트였음
     - 스프링부트 자바 강의를 조금씩 듣고 있는데 많은 경험이 있는건 아니지만 따른 프레임 워크에 비해 효율적이고 빠르게 게시판을 만들 수 있음을 느낌
     - 함수형과 클래스형 뷰 코드를 모두 사용해보기 위해 앱 개수가 늘어나다 보니 URL이 복잡해졌지만, 둘의 차이점에 대해 알 수 있었음
