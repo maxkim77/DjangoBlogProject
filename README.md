@@ -51,6 +51,14 @@
 
 ![캡처](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/a6fd2edb-e205-44f7-9dc5-0424d88a2bb9)
 
+- 4개의 앱(main, accounts, blog(메인 갤러리형 게시판), boardapp(보조형 자유게시판))으로 구성
+
+- 클래스뷰 및 함수형뷰
+    - 클래스 뷰를 통한 제너릭뷰, 믹스인뷰 사용 그리고 재사용성이라는 장점으로 주요 앱(main, accounts,blog) 는 클래스형으로 작성
+    - 함수형 뷰는 간결하고 직관적인 특징으로 간편하게 쓰일 수있는 보조형 자유게시판에서 작성
+      
+- 포스트 기능으로 좋아요, 태그, 대댓글, 카테고리 등을 사용 함
+
 
 ## ✨3. 개발기술 & 환경 및 배포 URL
 - 개발 기술 및 환경
@@ -86,7 +94,11 @@
 ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?&style=for-the-badge&logo=amazon-aws&logoColor=white)
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/>
 
-
+- 부트스트랩은 Startbootstrap에서 테마를 따옴
+- 장고는 모놀로그 형식
+- 특이사항으로는 tawk.to라는 실시간 채팅솔루션과 StableDiffusion API로 이미지 생성 가능하게 함(배포 버젼에서는 현제 토큰수 소진으로 생성이 안되는 상황)
+- Github에 업로드한 레파지토리를 AWS lightsail에 clone 하여 배포
+  
 - 배포 URL: http://your-blog.com
 
 ## 🎁4. 프로젝트 및 URL 구조와 개발일정
@@ -134,9 +146,9 @@
   
 | App       | URL                                        | Views Function    | HTML File Name                        | Note           |
 |-----------|--------------------------------------------|-------------------|---------------------------------------|----------------|
-| main      | '/'                                        | home              | main/home.html                        |                |
-| main      | '/about/'                                  | about             | main/about.html                       |                |
-| main      | '/generator/'                               | generator         | main/generator.html                   |                |
+| main      | '/'                                        | home              | main/home.html                        | 홈화면          |
+| main      | '/about/'                                  | about             | main/about.html                       | 소개페이지               |
+| main      | '/generator/'                               | generator         | main/generator.html                   | AI이미지 생성게시판      |
 
 
 - accounts
@@ -144,9 +156,9 @@
   
 | App       | URL                                        | Views Function    | HTML File Name                        | Note           |
 |-----------|--------------------------------------------|-------------------|---------------------------------------|----------------|
-| accounts  | 'register/'                                | register          | accounts/register.html                |                |
-| accounts  | 'login/'                                   | login             | accounts/login.html                   |                |
-| accounts  | 'logout/'                                  | logout            | accounts/logout.html                  |                |
+| accounts  | 'register/'                                | register          | accounts/register.html                |회원가입         |
+| accounts  | 'login/'                                   | login             | accounts/login.html                   |로그인           |
+| accounts  | 'logout/'                                  | logout            | accounts/logout.html                  |로그아웃         |
 | accounts  | 'profile/'                                 | profile           | accounts/profile.html                 | 비밀번호변경기능 / <br>프로필 수정/ 닉네임추가 |
 
 
@@ -170,17 +182,17 @@
 
 | App       | URL                                        | Views Function    | HTML File Name                        | Note           |
 |-----------|--------------------------------------------|-------------------|---------------------------------------|----------------|
-| blog      | 'blog/'                                    | blog              | blog/blog.html                        |                |
-| blog      | 'blog/<int:pk>/'                           | post              | blog/post.html                        |                |
+| blog      | 'blog/'                                    | blog              | blog/blog.html                        |갤러리형 게시판 메인 화면  |
+| blog      | 'blog/<int:pk>/'                           | post              | blog/post.html                        |상세 포스트 화면    |
 | blog      | 'blog/write/'                              | write             | blog/write.html                       | 카테고리 지정, 사진업로드,<br> 게시글 조회수 반영|
 | blog      | 'blog/edit/<int:pk>/'                      | edit              | blog/edit.html                        | 게시물목록보기 |
-| blog      | 'blog/delete/<int:pk>/'                    | delete            | blog/delete.html                      |                 |
+| blog      | 'blog/delete/<int:pk>/'                    | delete            | blog/delete.html                      | 삭제          |
 | blog      | 'blog/search/'                             | search            | blog/search.html                      | 주제와 카테고리에 따라 검색,<br> 시간순에 따라 정렬|
-| blog      | 'post/<int:post_pk>/comment/'              | comment_new       | blog/comment_form.html                |                |
-| blog      | 'post/<int:post_pk>/comment/<br><int:parent_pk>/' | reply_new    | blog/comment_form.html                |                |
-| blog      | 'post/<int:pk>/like/'                      | like_post         | blog/post.html                        |                |
-| blog      | 'comment/<int:pk>/update/'                 | comment_update    | blog/comment_form.html                |                |
-| blog      | 'comment/<int:pk>/delete/'                 | comment_delete    | blog/comment_<br>confirm_delete.html      |                |
+| blog      | 'post/<int:post_pk>/comment/'              | comment_new       | blog/comment_form.html                | 댓글 입력폼     |
+| blog      | 'post/<int:post_pk>/comment/<br><int:parent_pk>/' | reply_new    | blog/comment_form.html                | 대댓글 폼      |
+| blog      | 'post/<int:pk>/like/'                      | like_post         | blog/post.html                        |좋아요를 누르면 blog/post로 Redirect됨|
+| blog      | 'comment/<int:pk>/update/'                 | comment_update    | blog/comment_form.html                |댓글 업데이터 경로   |
+| blog      | 'comment/<int:pk>/delete/'                 | comment_delete    | blog/comment_<br>confirm_delete.html      |댓글 삭제 폼    |
 
 
 
