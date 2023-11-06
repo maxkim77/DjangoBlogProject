@@ -375,6 +375,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 ## 📖10. 총 정리
 - 오류정리
+
+  
     - **SyntaxError in Views.py**
     - 에러명: 'SyntaxError'
     - 문제코드: 'if request.method = "POST":
