@@ -271,6 +271,8 @@
 
 
 📌 게시글 상세보기 기능 구현
+![8](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/c9b7acf5-70b4-4d8e-8a26-8eb4a7d4828a)
+![9](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/f44f1467-5398-44ea-86d8-9cbd3be19443)
 
  
 - 게시글의 제목/내용을 보는 기능입니다.
