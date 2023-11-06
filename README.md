@@ -354,8 +354,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 - 번역 기능 (en, kr)
 
 
-📍 **(선택) AWS Lightsail로 배포합니다.**
-- 해당 과제는 개인에게 비용이 청구될 수 있습니다. 따라서 선택사항이지만 꼭 배포하여 운영까지 해보시는 것을 권해드립니다.
+📍 **(선택) AWS Lightsail로 배포**
+
+
+![image](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/eae3e876-d441-43e5-a860-3c83097ab09c)
+
 
 ## 🧑9. 역할 분담 : 김정원(Back-End Developer)
 
