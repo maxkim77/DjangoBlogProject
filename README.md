@@ -313,6 +313,11 @@
 
 ## 🔔8. 추가기능
 📍 **회원 관련 추가 기능(UI 직접 구현 필요)**
+
+
+![13](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/8c74da30-4129-4b53-bdda-ffa2e71edc51)
+
+
 - 비밀번호 변경기능
 - 프로필 수정
 - 닉네임 추가
