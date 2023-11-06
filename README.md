@@ -382,7 +382,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
       파이썬 조건문에서는 동등비교를 위해 '=='을 사용해 야함
      ```
       if request.method == "POST":
-      ```
+     ```
   
     - **IntegerityError**
     - 에러명 : 'IntegrityError'
