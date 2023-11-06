@@ -359,6 +359,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 - Stable Diffusion을 활용한 AI 이미지 생성 화면(Generator 페이지)
+
+
 ![15](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/08b63f0c-87ac-4661-bfe2-d9e7ce615180)
 
 
