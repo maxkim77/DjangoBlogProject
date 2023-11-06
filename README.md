@@ -351,7 +351,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 ```
 서버에서 python manage.py collectstatic 명령 입력
 
-- 번역 기능 (en, kr)
+- Tawk API를 활용한 실시간 채팅기능(About 페이지)
+
+
+![16](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/b1baeb2b-98da-47a9-8eca-fa1c35e8d57a)
+
+
+
+- Stable Diffusion을 활용한 AI 이미지 생성 화면(Generator 페이지)
+![15](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/08b63f0c-87ac-4661-bfe2-d9e7ce615180)
 
 
 📍 **(선택) AWS Lightsail로 배포**
