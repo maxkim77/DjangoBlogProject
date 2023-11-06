@@ -413,29 +413,32 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
 ### 10.1 오류정리
 
   
-    - **SyntaxError in Views.py**
+    **SyntaxError in Views.py**
     - 에러명: 'SyntaxError'
     - 문제코드: 'if request.method = "POST":
     - 해결방안: 파이썬 조건문에서는 동등비교를 위해 '=='을 사용해야 함
+    
     ```
     if request.method == "POST":
     ```
 
 
-    - **IntegerityError**
+    **IntegerityError**
     - 에러명 : 'IntegrityError'
     - 문제상황 : 모델필드가 null 값을 허용 안함
     - 해결방안 : 해당 필드에 'null=True' 옵션추가
+    
     ```
     #models.py
     summary = models.TextFeild(null=True)
     ```
 
 
-    - **파일 업로드 후 표시문제**
+    **파일 업로드 후 표시문제**
     - 에러명: ValueError
     - 문제상황 : 템플릿에서 파일 확장자와 맞지 않는 파일을 올릴때는 표시가 안 되었음
     - 해결방안: post_detail 뷰에서 파일 존재여부 확인후 이를 템플릿에 전달, 템플릿에서는 file_exists 변수를 사용하여 조건부 렌더링 수행, 다음과 같이 뷰 및 템플릿 수정
+    
     ```
     def post_detail(request, pk):
         post = get_object_or_404(Board, pk=pk)
