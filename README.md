@@ -380,7 +380,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     - **SyntaxError in Views.py**
     - 에러명: 'SyntaxError'
     - 문제코드: 'if request.method = "POST":
-    - 해결방안: 파이썬 조건문에서는 동등비교를 위해 '=='을 사용해 야함
+    - 해결방안: 파이썬 조건문에서는 동등비교를 위해 '=='을 사용해야 함
     ```
     if request.method == "POST":
     ```
