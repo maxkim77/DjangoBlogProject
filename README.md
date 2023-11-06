@@ -335,6 +335,22 @@
 
 📍 부가 기능
 - 정적 파일 모으기 (collectstatic)
+
+```
+# settings.py
+
+# 정적 파일 기본 URL
+STATIC_URL = '/static/'
+
+# 추가적인 정적 파일 디렉토리 (개발 환경에서 사용)
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+#(운영환경에서 사용)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+```
+서버에서 python manage.py collectstatic 명령 입력
+
 - 번역 기능 (en, kr)
 
 
