@@ -520,7 +520,7 @@ def post_detail(request, pk):
 💡 **대댓글 구현 방식**
 - Comment 모델의 parent 필드를 통해 구현
 - 사용자가 B라는 댓글을 달 때 A의 대댓글로 지정하려는 경우, A라는 대댓글 ID는 parent_pk 파라미터로 전달
-- CommentCreateView에서 이를 확인하여 B 댓글의 부모댓글 'parent' 댓글로 A를 설정
+- CommentCreateView 에서 이를 확인하여 B 댓글의 부모댓글 'parent' 댓글로 A를 설정
 - 이렇듯 parent 필드를 통해 부모-자식간의 관계가 형성됨
 - 템플릿에서는 주댓글에 대한 루프를 돌면서 replies 관계 형성
 
