@@ -395,7 +395,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 ![image](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/b450ec07-3a84-45ff-8d2a-ec771b283355)
 
    
-        ```python
+      
         # models.py
         class Post(models.Model):
             # <생략>
@@ -409,7 +409,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
                 notice_list = Post.objects.filter(is_notice=True).order_by('-created_at')
                 regular_post_list = Post.objects.filter(is_notice=False).order_by('-created_at')
                 # <생략> 
-        ```
+      
 
 
 - Tawk API를 활용한 실시간 채팅기능(About 페이지)
