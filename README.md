@@ -430,7 +430,7 @@ class BlogListView(ListView):
 
 ![image](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/eae3e876-d441-43e5-a860-3c83097ab09c)
 
-
+🎈 Link : https://aws.amazon.com/ko/lightsail/
 
 https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f36-b6d9-1ae525a23099
 
