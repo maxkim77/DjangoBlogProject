@@ -101,7 +101,8 @@
 - 특이사항으로는 tawk.to라는 실시간 채팅솔루션과 StableDiffusion API로 이미지 생성 가능하게 함(배포 버젼에서는 현재는 토큰수 소진으로 생성이 안되는 상황)
 - Github에 업로드한 레파지토리를 AWS lightsail에 clone 하여 배포
   
-### 3.2 배포 URL: http://your-blog.com
+### 3.2 배포 URL: http://54.180.146.126:8000/
+
 
 ## 🎁4. 프로젝트 및 URL 구조와 개발일정
 
