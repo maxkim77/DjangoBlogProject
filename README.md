@@ -381,6 +381,33 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 ```
 서버에서 python manage.py collectstatic 명령 입력
 
+
+- 공지사항 기능(관리자만)
+
+  
+![0](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/883e145a-f588-4c16-b219-753789e57467)
+![00](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/537d0bc1-f457-491d-918d-914343ef12e0)
+
+```
+#models.py
+class Post(models.Model):
+#<-- 생략 -->
+is_notice = models.BooleanField(default=False, verbose_name="공지사항 여부")
+```
+```
+#views.py
+class BlogListView(ListView)
+#<-- 생략 -->
+    def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    notice_list = Post.objects.filter(is_notice=True).order_by('-created_at')
+    regular_post_list = Post.objects.filter(is_notice=False).order_by('-created_at')
+#<-- 생략 -->
+```
+
+
+![00](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/210c0375-3b2b-4220-8ab3-363c642427c8)
+
 - Tawk API를 활용한 실시간 채팅기능(About 페이지)
 
 
@@ -392,6 +419,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 ![15](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/08b63f0c-87ac-4661-bfe2-d9e7ce615180)
+
 
 
 📍 **(선택) AWS Lightsail로 배포**
