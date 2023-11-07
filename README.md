@@ -394,7 +394,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 ![image](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/b450ec07-3a84-45ff-8d2a-ec771b283355)
 
+
     - model로 is_notice를 설정
+
+
 ```
 #models.py
 class Post(models.Model):
