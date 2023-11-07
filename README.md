@@ -395,7 +395,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 ![image](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/b450ec07-3a84-45ff-8d2a-ec771b283355)
 
 
-- 모델에서 `is_notice` 설정:
+   - 모델에서 `is_notice` 설정:
     ```python
     #models.py
     class Post(models.Model):
@@ -403,7 +403,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
         is_notice = models.BooleanField(default=False, verbose_name="공지사항 여부")
     ```
 
-- `views.py`에서 `get_context_data` 메서드를 사용하여 공지사항과 일반 게시글을 분리:
+   - `views.py`에서 `get_context_data` 메서드를 사용하여 공지사항과 일반 게시글을 분리:
     ```python
     #views.py
     class BlogListView(ListView):
