@@ -396,6 +396,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
     - 모델에서 `is_notice` 설정:
+
+    
         ```python
         # models.py
         class Post(models.Model):
@@ -404,6 +406,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
         ```
 
     - `views.py`에서 `get_context_data` 메서드를 사용하여 공지사항과 일반 게시글을 분리:
+    
+        
         ```python
         # views.py
         class BlogListView(ListView):
