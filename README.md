@@ -37,7 +37,7 @@
 ### 2.1 기본 요구사항
 - UI 스타일링
 - 클래스형 뷰 및 함수형 뷰 중 택 개발
-- 모놀로식으로 개발
+ㅋ
 - 데이터 베이스 구조 설계
 
 ### 2.2 단계별 요구사항
@@ -98,7 +98,6 @@
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/>
 
 - 부트스트랩은 Startbootstrap에서 테마를 따옴
-- 장고는 모놀로그 형식
 - 특이사항으로는 tawk.to라는 실시간 채팅솔루션과 StableDiffusion API로 이미지 생성 가능하게 함(배포 버젼에서는 현재는 토큰수 소진으로 생성이 안되는 상황)
 - Github에 업로드한 레파지토리를 AWS lightsail에 clone 하여 배포
   
@@ -247,7 +246,7 @@
 
   
 ### 6.2 관계 정의 : 
-- Post와 Board의 author_id 필드는 users 테이블의 id 필드와 연결,
+- Post와 Board의 id 필드는 users 테이블의 id 필드와 연결
 - 다대다 관계 : PostLikes ↔ (Post 와 User) / PostTags ↔ (Post 와 Tag)
 - 다대일 관계 : BoardComment - Board / Boardlikes - User
 
@@ -418,7 +417,7 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f3
 **🛠SyntaxError in Views.py**
 - 에러명: 'SyntaxError'
 - 문제코드: 'if request.method = "POST":'
-- 해결방안: 파이썬 조건문에서는 동등비교를 위해 '=='을 사용해야 함
+- 해결방안: 파이썬 조건문에서는 동등비교를 위해 '=='을 사용해야 함(할당 연산자 x, 동등 연산자)
 
 ```python
 if request.method == "POST":
