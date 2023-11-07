@@ -242,7 +242,7 @@
 ![감귤마켓](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/687c5170-1b9a-4f76-bbca-64391dac488d)
 
 ### 6.1 테이블 구조 : 
-- users, Post, Comment, Tag, PostLikes, PostTags, UserProfile, Board, BoardComment, Boardlikes 
+- users, Post, Comment, Tag, PostLikes, PostTags, UserProfile, Board, BoardComment, Boardlikes(총 10개의 테이블)
 
   
 ### 6.2 관계 정의 : 
