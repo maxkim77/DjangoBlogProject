@@ -394,22 +394,21 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 ![image](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/b450ec07-3a84-45ff-8d2a-ec771b283355)
 
-   
-      
-        # models.py
-        class Post(models.Model):
-            # <생략>
-            is_notice = models.BooleanField(default=False, verbose_name="공지사항 여부")
-            
-        # views.py
-        class BlogListView(ListView):
-            # <생략>
-            def get_context_data(self, **kwargs):
-                context = super().get_context_data(**kwargs)
-                notice_list = Post.objects.filter(is_notice=True).order_by('-created_at')
-                regular_post_list = Post.objects.filter(is_notice=False).order_by('-created_at')
-                # <생략> 
-      
+
+```   
+# models.py
+class Post(models.Model):
+# <생략>
+    is_notice = models.BooleanField(default=False, verbose_name="공지사항 여부")
+# views.py
+class BlogListView(ListView):
+# <생략>
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        notice_list = Post.objects.filter(is_notice=True).order_by('-created_at')
+        regular_post_list = Post.objects.filter(is_notice=False).order_by('-created_at')
+# <생략> 
+```      
 
 
 - Tawk API를 활용한 실시간 채팅기능(About 페이지)
