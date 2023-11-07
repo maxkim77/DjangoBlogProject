@@ -215,7 +215,7 @@
 
 
 ![슬라이드1](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/a738e808-5df8-4ea4-8465-9344b5df46eb)
-
+<Mindmister>
 
 ### 5.1 main 구성 : 
 - 메인 페이지
