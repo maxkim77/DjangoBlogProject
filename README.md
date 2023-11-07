@@ -392,7 +392,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #models.py
 class Post(models.Model):
 #<-- 생략 -->
-is_notice = models.BooleanField(default=False, verbose_name="공지사항 여부")
+    is_notice = models.BooleanField(default=False, verbose_name="공지사항 여부")
 ```
 ```
 #views.py
