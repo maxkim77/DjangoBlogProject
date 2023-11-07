@@ -8,15 +8,6 @@
 ## 🎈1. 목표와 기능
 
 ### 1.1 목표 및 배경
-- 배경:
-
-
-✔︎ Stable Diffusion, Dalle 등 AI Image의 기술의 발달
-
-
-✔︎ AI 이미지에 대한 관심과 AI이미지용 블로그 주제가 많이 없다고 생각되어 해당 주제로 블로그 개발
-
-
 - 목표 :
 
 
@@ -24,6 +15,15 @@
 
 
 ✔︎ 유저들이 Stable Diffusion API를 통해 AI Image 생성후 업로드 및 공유하며 AI Image와 관련 정보 공유
+
+
+- 배경:
+
+
+✔︎ Stable Diffusion, Dalle 등 AI Image의 기술의 발달
+
+
+✔︎ AI 이미지에 대한 관심과 AI이미지용 블로그 주제가 많이 없다고 생각되어 해당 주제로 블로그 개발
 
 
 ### 1.2 기능
