@@ -400,10 +400,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
         class Post(models.Model):
             # <생략>
             is_notice = models.BooleanField(default=False, verbose_name="공지사항 여부")
-        ```
-   
-        
-        ```python
+            
         # views.py
         class BlogListView(ListView):
             # <생략>
