@@ -409,8 +409,6 @@ class BlogListView(ListView)
 ```
 
 
-![00](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/210c0375-3b2b-4220-8ab3-363c642427c8)
-
 - Tawk API를 활용한 실시간 채팅기능(About 페이지)
 
 
