@@ -397,7 +397,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
     - model로 is_notice를 설정
 
-
 ```
 #models.py
 class Post(models.Model):
@@ -405,9 +404,7 @@ class Post(models.Model):
     is_notice = models.BooleanField(default=False, verbose_name="공지사항 여부")
 ```
 
-
     - views.py에서 get_context_data 메서드에서 공지사항 파트와 일반 게시글 파트로 두 변수를 나눔.
-
 
 ```
 #views.py
