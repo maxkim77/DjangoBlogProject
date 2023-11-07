@@ -50,6 +50,8 @@
 
 
 ![캡처](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/a6fd2edb-e205-44f7-9dc5-0424d88a2bb9)
+**Mindmister**
+
 
 - 4개의 앱(main, accounts, blog(메인 갤러리형 게시판), boardapp(보조형 자유게시판))으로 구성
 
