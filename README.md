@@ -290,8 +290,10 @@
 
 
 📌 게시글 목록 기능 구현
-![7](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/db0c977f-9ce4-4a99-b5a9-214177a44023)
-![6](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/e6c9c133-ad28-440c-9050-e574235c99fe)
+
+
+![2](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/946643a3-1f37-40ac-adf4-45845beeb335)
+![1](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/5576424f-d1dd-4e28-bebb-4f220897442a)
 
 
 - 모든 사용자들이 게시한 블로그 게시글들의 제목을 확인 함
