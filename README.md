@@ -308,7 +308,7 @@
 
 
 📌 게시글 검색 기능 구현
-![10](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/4f2e87ea-421e-4091-8da9-95427cbda230)
+![6](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/5c0ef061-1ac8-4af8-a7ad-24eb43af182f)
 
 
 - 주제와 태그에 따라 검색이 가능
