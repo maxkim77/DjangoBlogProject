@@ -239,8 +239,8 @@
 ## 🎨6. ERD 모델링
 
 
-
 ![감귤마켓](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/687c5170-1b9a-4f76-bbca-64391dac488d)
+
 
 ### 6.1 테이블 구조 : 
 - users, Post, Comment, Tag, PostLikes, PostTags, UserProfile, Board, BoardComment, Boardlikes(총 10개의 테이블)
@@ -301,8 +301,7 @@
 
 📌 게시글 상세보기 기능 구현
 ![5](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/8cb98248-277c-46f0-95f9-bdc5e9a8a1a0)
-
-![9](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/f44f1467-5398-44ea-86d8-9cbd3be19443)
+![3](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/9bb70576-3b8c-43ac-b607-99fd53fdd173)
 
  
 - 게시글의 제목/내용을 보는 기능
