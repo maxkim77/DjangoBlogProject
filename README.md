@@ -388,7 +388,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     - views.py에서 get_context_data 메서드를 사용하여 공지사항과 일반 게시글을 분리
   
 
-![13](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/e0fe3bb4-8b8f-44fe-bac3-abdbfefd59eb)
+![00](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/3851d806-e555-41a0-8d27-995f41aa1786)
 
 
 ![image](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/b450ec07-3a84-45ff-8d2a-ec771b283355)
