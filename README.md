@@ -300,7 +300,8 @@
 
 
 📌 게시글 상세보기 기능 구현
-![8](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/c9b7acf5-70b4-4d8e-8a26-8eb4a7d4828a)
+![5](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/8cb98248-277c-46f0-95f9-bdc5e9a8a1a0)
+
 ![9](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/f44f1467-5398-44ea-86d8-9cbd3be19443)
 
  
