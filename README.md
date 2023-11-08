@@ -330,7 +330,7 @@
 📌  게시글 삭제 기능 구현
 
 
-![9 (2)](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/e04d5ac5-e65c-44dd-b28b-f66d2547629a)
+![9](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/98a283e3-4f60-45c3-8559-2a062e994e4c)
 
 
 - 로그인을 한 유저만 해당 기능을 사용 할 수 있음
