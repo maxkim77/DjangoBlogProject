@@ -264,21 +264,14 @@
 - 로그인 버튼을 클릭하면 로그인 페이지로 이동
 
 
-📌 회원가입 기능 구현
+📌 회원가입 / 로그인 기능 구현
 
-![3](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/f2b9dd7b-ea74-4858-b853-f6a828d2b78a)
+
+![3 (1)](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/11c97b55-d0c3-4afe-b023-e19dffa74dbd)
 
 
 - 회원가입을 할 수 있는 페이지
 - 입력받는 값은 id, password
-
-
-📌 로그인 기능 구현
-
-
-![2](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/f95a4d9a-34d3-4b71-97aa-c6758c383e8f)
-
-
 - 로그인을 할 수 있는 페이지
 - 입력받는 값은 id, password
 
