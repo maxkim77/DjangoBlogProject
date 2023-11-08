@@ -387,7 +387,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 - 공지사항 기능
     - 관리자만 관리자페이지에서 설정 가능
     - 모델에서 is_notice 설정
-    - views.py`에서 `get_context_data 메서드를 사용하여 공지사항과 일반 게시글을 분리
+    - views.py에서 get_context_data 메서드를 사용하여 공지사항과 일반 게시글을 분리
   
 ![0](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/883e145a-f588-4c16-b219-753789e57467)
 
