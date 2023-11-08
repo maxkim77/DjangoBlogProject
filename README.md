@@ -279,7 +279,7 @@
 📌 게시글 작성 기능 구현
 
 
-![4](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/eaf77c4d-31f8-4b1c-8bd5-afa998e44ae6)
+![4 (2)](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/73c51c68-5d77-4599-b79a-250e8c19e467)
 
 
 - 로그인을 한 유저만 해당 기능을 사용 할 수 있음
