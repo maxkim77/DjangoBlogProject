@@ -510,5 +510,5 @@ summary = models.TextField(null=True)
 - 장고의 다양한 기능과 코드 방식에 대해 깊이 연구 할 수 있는 기회가 됨
 - AWS 배포를 통해 아마존 웹 서비스를 처음 활용 해볼 수 있는 좋은 기회가 됨
 
-## 11 참고링크
+## 🎊11. 참고링크
 📖 Velog : https://han.gl/btewiM
