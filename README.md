@@ -421,7 +421,8 @@ class BlogListView(ListView):
 - Stable Diffusion을 활용한 AI 이미지 생성 화면(Generator 페이지)
 
 
-![15](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/08b63f0c-87ac-4661-bfe2-d9e7ce615180)
+![12 (3)](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/9ef7652c-fc2c-4faf-adbc-80007c424287)
+
 
 🎈 Link : https://stablediffusionapi.com/docs/stable-diffusion-api/text2img
 
