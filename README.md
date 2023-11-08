@@ -354,7 +354,8 @@
 
 📍 **댓글 기능(UI 직접 구현 필요)**
 
- ![14-min](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/11e4da59-1513-445a-8862-36ac54aaa97c)
+
+![11 (3)](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/1ffadcda-8ff4-4981-9eb7-821305df5482)
 
  
  - 댓글 추가
@@ -386,7 +387,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     - 모델에서 is_notice 설정
     - views.py에서 get_context_data 메서드를 사용하여 공지사항과 일반 게시글을 분리
   
-![0](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/883e145a-f588-4c16-b219-753789e57467)
+
+![13](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/e0fe3bb4-8b8f-44fe-bac3-abdbfefd59eb)
 
 
 ![image](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/b450ec07-3a84-45ff-8d2a-ec771b283355)
