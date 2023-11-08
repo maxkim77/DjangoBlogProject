@@ -255,7 +255,8 @@
 ## 🎲7. 메인기능
 📌 메인페이지 구현
 
-  ![1](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/c7cfc8a1-a39e-404e-9647-aac57c06d8d4)
+
+![1 (2)](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/4c3592bc-0bb1-45c7-bca8-6d8ee0a11e08)
 
 - 페이지 제목과 블로그 입장하기 버튼
 - 회원가입/로그인 버튼
