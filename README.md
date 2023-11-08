@@ -433,7 +433,8 @@ class BlogListView(ListView):
 
 🎈 Link : https://aws.amazon.com/ko/lightsail/
 
-https://github.com/maxkim77/DjangoBlogProject/assets/141907655/01223160-76a2-4f36-b6d9-1ae525a23099
+
+https://github.com/maxkim77/DjangoBlogProject/assets/141907655/7ffb27ae-7f88-4695-97ef-19f180e84ca2
 
 
 ## 🧑9. 개발자 : 김정원(Back-End Developer)
