@@ -415,7 +415,7 @@ class BlogListView(ListView):
 - Tawk API를 활용한 실시간 채팅기능(About 페이지)
 
 
-![2 (2)](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/531af7a1-caea-4181-ae16-36e71a27e604)
+![2 (2)](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/5f3269e1-da7e-4efc-984e-2107e757cf50)
 
 
 🎈 Link : https://www.tawk.to/
