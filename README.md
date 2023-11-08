@@ -317,7 +317,8 @@
 
 📌 게시글 수정 기능 구현
 
-![11](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/19c1945a-ceb8-46bd-b28c-6674f575b4ef)
+
+![8](https://github.com/maxkim77/DjangoBlogProject/assets/141907655/1f19428d-ef40-464e-99e5-b1dc305f64e7)
 
 
 - 로그인을 한 유저만 해당 기능 사용 가능
