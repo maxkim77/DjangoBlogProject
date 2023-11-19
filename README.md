@@ -437,8 +437,27 @@ class BlogListView(ListView):
 https://github.com/maxkim77/DjangoBlogProject/assets/141907655/7ffb27ae-7f88-4695-97ef-19f180e84ca2
 
 
-## 🧑9. 개발자 : 김정원(Back-End Developer)
+## 🧑9. RDBMS 사용 : Postgre - Django 연결
 
+
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tutorialdjango',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+'''
+
+
+
+<img width="1423" alt="스크린샷 2023-11-19 오후 3 41 35" src="https://github.com/maxkim77/DjangoBlogProject/assets/141907655/56c8c205-21ac-4ad5-9e3e-50837bd5ee69">
+
+<img width="1413" alt="스크린샷 2023-11-19 오후 3 37 58" src="https://github.com/maxkim77/DjangoBlogProject/assets/141907655/d1a7829c-03c9-4652-a040-fb41d8bf96ea">
 
 
 ## 📖 10. 총 정리
@@ -512,3 +531,6 @@ summary = models.TextField(null=True)
 
 ## 🎊11. 참고링크
 📖 Velog : https://han.gl/btewiM
+
+## 🧑12. 개발자 : 김정원(Back-End Developer)
+
