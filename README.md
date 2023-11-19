@@ -439,8 +439,10 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/7ffb27ae-7f88-469
 
 ## 🧑9. RDBMS 사용 : Postgre - Django 연결
 
+- RDBMS Postgre를 사용하여 Django와 연결후 post 쿼리 조회
 
 ```
+# settings.py
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -452,8 +454,6 @@ DATABASES = {
     }
 }
 ```
-
-
 
 <img width="1423" alt="스크린샷 2023-11-19 오후 3 41 35" src="https://github.com/maxkim77/DjangoBlogProject/assets/141907655/56c8c205-21ac-4ad5-9e3e-50837bd5ee69">
 
@@ -531,6 +531,8 @@ summary = models.TextField(null=True)
 
 ## 🎊11. 참고링크
 📖 Velog : https://han.gl/btewiM
+
+
 ❤️ EST soft : 대상 수상 프로젝트(https://url.kr/br6yg7)
 
 ## 🧑12. 개발자 : 김정원(Back-End Developer)
