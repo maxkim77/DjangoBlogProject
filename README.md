@@ -531,6 +531,7 @@ summary = models.TextField(null=True)
 
 ## 🎊11. 참고링크
 📖 Velog : https://han.gl/btewiM
+❤️ EST soft : 대상 수상 프로젝트(https://url.kr/br6yg7)
 
 ## 🧑12. 개발자 : 김정원(Back-End Developer)
 
