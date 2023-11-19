@@ -437,7 +437,7 @@ class BlogListView(ListView):
 https://github.com/maxkim77/DjangoBlogProject/assets/141907655/7ffb27ae-7f88-4695-97ef-19f180e84ca2
 
 
-## 🧑9. RDBMS 사용 : Postgre - Django 연결
+## 🧑9. RDBMS 사용 : PostgreSQL - Django 연결
 
 - RDBMS Postgre를 사용하여 Django와 연결후 post 쿼리 조회
 
