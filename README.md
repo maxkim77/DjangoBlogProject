@@ -440,7 +440,7 @@ https://github.com/maxkim77/DjangoBlogProject/assets/141907655/7ffb27ae-7f88-469
 ## 🧑9. RDBMS 사용 : Postgre - Django 연결
 
 
-'''
+```
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -451,7 +451,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-'''
+```
 
 
 
